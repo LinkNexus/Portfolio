@@ -1,0 +1,67 @@
+@use 'sass:color'
+@import url('https://fonts.googleapis.com/css2?family=Sora&display=swap')
+
+@tailwind base
+@tailwind components
+@tailwind utilities
+
+body
+  color: white
+  font-family: 'Sora', sans-serif
+
+$themePrimary: #8750f7
+$themePrimary1: #2400ff
+$themePrimary2: #9b8dff
+$themePrimary3: #4654f9
+$themeH3Primary1: #814cec
+$themeH4Primary1: #240F31
+$themeSecondary: #2a1454
+$themeAccent1: #0f0715
+$themeAccent2: #140c1c
+
+//:root
+//  --theme-primary: #8750f7
+//  --theme-primary-1: #2400ff
+//  --theme-primary-2: #9b8dff
+//  --theme-primary-3: #4654f9
+//  --theme-h3-primary-1: #814cec
+//  --theme-h4-primary-1: #240F31
+//  --theme-secondary: #2a1454
+//  --theme-accent-1: #0f0715
+//  --theme-accent-2: #140c1c
+
+.position-center
+  @apply flex content-center justify-center flex-wrap
+
+.button
+  box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24)
+  @apply cursor-pointer outline-none transition-all
+
+  &:active
+    @apply transform scale-95
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24)
+
+nav a
+  z-index: 1
+  position: relative
+  @apply position-center relative
+
+  &:not(.active):hover
+    @apply text-theme-primary
+
+  &.active
+    &:before
+      content: ''
+      position: absolute
+      width: 100%
+      height: 2px
+      border-radius: 4px
+      background-image: linear-gradient(260deg, $themeSecondary 0%, $themePrimary 100%)
+      bottom: 5px
+      left: 0
+      transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out
+      transform-origin: left
+      transform: scaleX(1)
+
+header .button:hover
+  background: color.adjust($themePrimary, $lightness: -5%)

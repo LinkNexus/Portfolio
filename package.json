@@ -1,0 +1,26 @@
+{
+    "type": "module",
+    "private": true,
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build"
+    },
+    "devDependencies": {
+        "@hotwired/stimulus": "^3.0.0",
+        "@symfony/stimulus-bridge": "^3.2.0",
+        "@symfony/ux-react": "file:vendor/symfony/ux-react/assets",
+        "autoprefixer": "^10.4.20",
+        "postcss": "^8.4.47",
+        "postcss-loader": "^8.1.1",
+        "react": "^18.0",
+        "react-dom": "^18.0",
+        "sass": "^1.80.6",
+        "tailwindcss": "^3.4.14",
+        "vite": "^5.0",
+        "vite-plugin-symfony": "^7.0"
+    },
+    "dependencies": {
+        "@vitejs/plugin-react": "^4.3.3",
+        "react-icons": "^5.3.0"
+    }
+}
