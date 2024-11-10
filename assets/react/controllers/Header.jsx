@@ -1,13 +1,27 @@
-import Logo from '../../../images/logo-white.png'
+import Logo from '../../images/logo-white.png'
 import {LiaDownloadSolid} from "react-icons/lia";
-import {useState} from "react";
-import {activeClassIf} from "../../../utils/activeClassIf.js";
+import {useEffect, useState} from "react";
+import {activeClassIf} from "../../utils/activeClassIf.js";
 import {CgMenuRight} from "react-icons/cg";
 import {IconContext} from "react-icons";
+import {AiOutlineClose} from "react-icons/ai";
 
-export default function () {
-    const path = location.pathname.replace('/', '');
+export default function ({ path }) {
     const [toggleMobileMenu, setToggleMobileMenu] = useState(false);
+    const [positionY, setPositionY] = useState(window.scrollY);
+    console.log(path)
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setPositionY(window.scrollY);
+        }
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        }
+    }, []);
 
     const toggleMenu = () => {
         setToggleMobileMenu(!toggleMobileMenu);
@@ -21,8 +35,8 @@ export default function () {
     return (
         <>
             <header
-                className='w-full font-normal lg:justify-center flex gap-x-3 justify-between h-fit content-center flex-wrap px-10 py-10 md:px-5 lg:px-3 lg:gap-x-2'>
-                <a className='position-center mr-auto md:mr-0 lg:mr-2' href='/'>
+                className={(positionY !== 0 ? 'bg-theme-black-2' : '') + ' w-full transition-all sticky top-0 font-normal lg:justify-center flex gap-x-3 justify-between h-fit content-center flex-wrap px-10 py-10 md:px-5 lg:px-3 lg:gap-x-2 text-white'}>
+                <a className='position-center mr-auto md:mr-0 lg:mr-2' href='/public'>
                     <img className='w-30 md:w-16' src={Logo} alt="logo"/>
                 </a>
                 <a className='content-center font-semibold mr-auto lg:mr-8 justify-center flex-wrap hover:text-theme-primary hidden md:flex'
@@ -69,11 +83,14 @@ export default function () {
                 </a>
                 <button onClick={toggleMenu} className='flex cursor-pointer position-center lg:hidden h-32 md:h-14'>
                     <IconContext.Provider value={{size: 'auto'}}>
-                        <CgMenuRight/>
+                        <CgMenuRight className={toggleMobileMenu ? 'hidden' : 'block'}/>
+                    </IconContext.Provider>
+                    <IconContext.Provider value={{size: 'auto'}}>
+                        <AiOutlineClose className={toggleMobileMenu ? 'block' : 'hidden'}/>
                     </IconContext.Provider>
                 </button>
             </header>
-            <nav className={toggleMobileMenu ? mobileMenuVariants.visible : mobileMenuVariants.hidden}>
+            <nav className={(toggleMobileMenu ? mobileMenuVariants.visible : mobileMenuVariants.hidden) + ' fixed top-[185px] left-0'}>
                 <ul className='flex text-4xl gap-y-7 font-semibold uppercase content-center flex-col px-5 py-4'>
                     <li className='flex content-center py-4 px-3 mb-4'>
                         <a href='/'>

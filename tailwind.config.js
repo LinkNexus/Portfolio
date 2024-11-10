@@ -17,7 +17,11 @@ export default {
         'theme-primary-2': '#9b8dff',
         'theme-primary-3': '#4654f9',
         'theme-accent-1': '#0f0715',
-        'theme-secondary': '#2a1454'
+        'theme-secondary': '#2a1454',
+        'theme-black-2': '#050709',
+        'theme-accent-2': '#140c1c',
+        'theme-white': '#ffffff',
+        'body': '#dddddd'
       }
     },
   },

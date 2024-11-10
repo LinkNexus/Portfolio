@@ -5,10 +5,6 @@
 @tailwind components
 @tailwind utilities
 
-body
-  color: white
-  font-family: 'Sora', sans-serif
-
 $themePrimary: #8750f7
 $themePrimary1: #2400ff
 $themePrimary2: #9b8dff
@@ -18,6 +14,12 @@ $themeH4Primary1: #240F31
 $themeSecondary: #2a1454
 $themeAccent1: #0f0715
 $themeAccent2: #140c1c
+$themeWhite: #fff
+$body: #dddddd
+
+body
+  color: $body
+  font-family: 'Sora', sans-serif
 
 //:root
 //  --theme-primary: #8750f7
@@ -41,6 +43,11 @@ $themeAccent2: #140c1c
     @apply transform scale-95
     box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24)
 
+.button-primary
+  @apply flex content-center justify-center text-4xl font-semibold button bg-theme-primary rounded-full
+  &:hover
+    background: color.adjust($themePrimary, $lightness: -5%)
+
 nav a
   z-index: 1
   position: relative
@@ -63,5 +70,44 @@ nav a
       transform-origin: left
       transform: scaleX(1)
 
+header.bg-theme-black-2
+  box-shadow: 0 0 30px rgba(135, 80, 247, 0.2)
+
 header .button:hover
   background: color.adjust($themePrimary, $lightness: -5%)
+
+.hero-wrapper
+  border: 1px solid $themeSecondary
+  box-shadow: 0 1px 3px 0 rgba(135, 80, 247, 0.2), 0 1px 2px -1px rgba(135, 80, 247, 0.2)
+
+.hero-title
+  background-image: linear-gradient(to right, $themePrimary 0%, $themeWhite 100%)
+  -webkit-text-fill-color: transparent
+  -webkit-background-clip: text
+  background-clip: text
+
+.hero-wrapper img
+  transition: all 0.4s ease-in-out 0s
+  border: 1px solid transparent
+
+  &:hover
+    transform: scale(1.05)
+    border: 1px solid $themePrimary
+
+.hero-wrapper ul li
+  @apply p-6
+  border-radius: 50%
+  border: 1px solid $themePrimary
+
+  &:hover
+    background: $themePrimary
+
+    & svg
+      fill: $themeWhite
+
+  & svg
+    fill: $themePrimary
+
+@media (min-width: 768px)
+  .hero-wrapper ul li
+    @apply px-3 py-3 h-fit
