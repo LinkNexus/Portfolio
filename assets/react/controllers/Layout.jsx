@@ -6,7 +6,7 @@ export default function () {
     return (
         <>
             <Header path={path} />
-            <MainContent path={path} />
+            {path === '' && <MainContent path={path} /> }
         </>
     );
 }

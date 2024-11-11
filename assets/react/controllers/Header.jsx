@@ -35,7 +35,7 @@ export default function ({ path }) {
     return (
         <>
             <header
-                className={(positionY !== 0 ? 'bg-theme-black-2' : '') + ' w-full transition-all sticky top-0 font-normal lg:justify-center flex gap-x-3 justify-between h-fit content-center flex-wrap px-10 py-10 md:px-5 lg:px-3 lg:gap-x-2 text-white'}>
+                className={(positionY !== 0 ? 'bg-theme-black-2' : '') + ' w-full transition-all sticky top-0 font-normal lg:justify-center flex gap-x-3 justify-between h-fit content-center flex-wrap px-10 py-10 md:px-5 lg:px-3 lg:gap-x-2 text-white z-10'}>
                 <a className='position-center mr-auto md:mr-0 lg:mr-2' href='/public'>
                     <img className='w-30 md:w-16' src={Logo} alt="logo"/>
                 </a>
@@ -90,7 +90,7 @@ export default function ({ path }) {
                     </IconContext.Provider>
                 </button>
             </header>
-            <nav className={(toggleMobileMenu ? mobileMenuVariants.visible : mobileMenuVariants.hidden) + ' fixed top-[185px] left-0'}>
+            <nav className={(toggleMobileMenu ? mobileMenuVariants.visible : mobileMenuVariants.hidden) + ' fixed top-[185px] left-0 z-10'}>
                 <ul className='flex text-4xl gap-y-7 font-semibold uppercase content-center flex-col px-5 py-4'>
                     <li className='flex content-center py-4 px-3 mb-4'>
                         <a href='/'>
