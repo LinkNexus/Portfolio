@@ -5,6 +5,7 @@ import {activeClassIf} from "../../utils/activeClassIf.js";
 import {CgMenuRight} from "react-icons/cg";
 import {IconContext} from "react-icons";
 import {AiOutlineClose} from "react-icons/ai";
+import {Menu} from "lucide-react";
 
 export default function ({ path }) {
     const [toggleMobileMenu, setToggleMobileMenu] = useState(false);
@@ -82,12 +83,15 @@ export default function ({ path }) {
                     </div>
                 </a>
                 <button onClick={toggleMenu} className='flex cursor-pointer position-center lg:hidden h-10 md:h-14'>
-                    <IconContext.Provider value={{size: 'auto'}}>
-                        <CgMenuRight className={toggleMobileMenu ? 'hidden' : 'block'}/>
-                    </IconContext.Provider>
-                    <IconContext.Provider value={{size: 'auto'}}>
-                        <AiOutlineClose className={toggleMobileMenu ? 'block' : 'hidden'}/>
-                    </IconContext.Provider>
+                    <div className='h-10'>
+                        <IconContext.Provider value={{className: 'test'}}>
+                            <CgMenuRight className={toggleMobileMenu ? 'hidden' : 'hidden'}/>
+                        </IconContext.Provider>
+                        <IconContext.Provider value={{className: 'test'}}>
+                            <AiOutlineClose className={toggleMobileMenu ? 'block' : 'hidden'}/>
+                        </IconContext.Provider>
+                        <Menu />
+                    </div>
                 </button>
             </header>
             <nav className={(toggleMobileMenu ? mobileMenuVariants.visible : mobileMenuVariants.hidden) + ' fixed top-[100px] left-0 z-10'}>
