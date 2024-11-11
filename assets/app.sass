@@ -89,6 +89,7 @@ header .button:hover
 .hero-wrapper img
   transition: all 0.4s ease-in-out 0s
   border: 1px solid transparent
+  border-radius: 50%
 
   &:hover
     transform: scale(1.05)
@@ -183,12 +184,22 @@ header .button:hover
   box-shadow: 0 0 30px rgba(135, 80, 247, 0.2)
   border-radius: 20px
 
-  & a img
-    border-radius: 10px
+  & a:nth-child(1)
+    @apply transition-all
+    &:hover
+      transform: scale(1.05)
+      filter: brightness(90%)
+    & img
+      border-radius: 10px
 
   & .tag
     @apply flex justify-center content-center rounded-full px-5 py-3 transition-all text-sm
-    border: 1px solid $themeSecondary
+    border: 1px solid $themePrimary
+    background: $themeSecondary
+
+  & .project-live-preview
+    &:hover
+      background: color.adjust($themePrimary, $lightness: -5%)
 
 @media (min-width: 1024px)
   .skills-categories button

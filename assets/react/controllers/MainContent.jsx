@@ -32,8 +32,8 @@ export default function ({ path }) {
 function Hero() {
     return (
         <div
-            className='hero-wrapper w-full px-5 py-5 rounded-2xl bg-theme-accent-2 flex flex-col content-center gap-y-6 md:flex-row md:gap-x-10 md:px-7'>
-            <h1 className='hero-title text-4xl align-center h-fit font-extrabold md:hidden'>
+            className='hero-wrapper w-full px-5 py-8 rounded-2xl bg-theme-accent-2 flex flex-col content-center gap-y-6 md:flex-row md:gap-x-10 md:px-7'>
+            <h1 className='hero-title w-full text-4xl text-center h-fit font-extrabold md:hidden'>
                 Hi, i'm a Student <br/>
                 + Web Developer
             </h1>
@@ -164,7 +164,7 @@ function Skills() {
                 </button>
             </div>
             <div
-                className={(!activeSkills ? 'hidden' : '') + ' skills-list flex gap-4 w-full flex-wrap justify-between mt-10 px-5 py-3'}>
+                className={(!activeSkills ? 'hidden' : '') + ' skills-list flex gap-4 w-full flex-wrap justify-center mt-10 px-5 py-3'}>
                 <div className='skill'>
                     <div>
                         <img src={HTMLImage} alt='html'/>
@@ -277,8 +277,8 @@ function RecentProjects() {
     ]
     return (
         <div className='w-full flex flex-col content-center'>
-            <h2 className='recent-projects-header'>Recent Projects</h2>
-            <div className='projects-list'>
+            <h2 className='recent-projects-header md:text-6xl'>Recent Projects</h2>
+            <div className='projects-list flex content-center justify-center flex-col gap-y-10 flex-wrap lg:flex-row lg:gap-x-6'>
                 {projects.map((project, index) => (
                     <Project key={index} project={project}/>
                 ))}
@@ -289,19 +289,19 @@ function RecentProjects() {
 
 function Project({ project }) {
     return (
-        <div className='bg-theme-accent-2 project flex flex-col content-center justify-center px-5 gap-y-5 py-5'>
-            <a className='w-9/10 mx-auto flex content-center justify-center flex-wrap' href={project.githubLink}>
+        <div className='bg-theme-accent-2 project flex flex-col content-center justify-center px-8 gap-y-5 py-8 lg:w-[47%]'>
+            <a className='w-8/10 mx-auto flex content-center justify-center flex-wrap' href={project.githubLink}>
                 <img className='w-full' src={project.image} alt={project.name}/>
             </a>
             <div className='mt-6 flex flex-col gap-y-3 text-base'>
-                <h3 className='text-2xl font-extrabold text-center'>
+                <h3 className='text-2xl md:text-4xl font-extrabold text-center'>
                     {project.name}
                 </h3>
                 <p className='text-center'>
                     {project.description}
                 </p>
                 {project.link &&
-                    <a className='mx-auto flex content-center justify-center text-white font-bold bg-theme-primary py-2 rounded-full my-2 text-center w-fit px-6 py-3'
+                    <a className='mx-auto project-live-preview md:w-2/5 md:min-w-fit flex content-center justify-center text-white font-bold bg-theme-primary py-2 rounded-full my-2 text-center w-fit px-6 py-3'
                        href={project.link}>
                         <span>Live Demo</span>
                         <div>
@@ -312,7 +312,7 @@ function Project({ project }) {
                     </a>}
                 <div className='flex justify-center gap-2 flex-wrap'>
                     {project.tags.map((tag, index) => (
-                        <span className='tag font-semibold' key={index}>{tag}</span>
+                        <span className='tag font-semibold md:text-base' key={index}>{tag}</span>
                     ))}
                 </div>
             </div>
