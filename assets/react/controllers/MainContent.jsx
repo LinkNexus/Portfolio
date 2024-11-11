@@ -21,7 +21,7 @@ import SocialNetworkPHPImage from '../../images/projects/social-network-php.png'
 
 export default function ({ path }) {
     return (
-        <section className='px-8 mt-10 px-12 lg:px-24'>
+        <section className='px-4 mt-10 px-12 lg:px-24'>
             <Hero />
             <Skills />
             <RecentProjects />
@@ -32,8 +32,8 @@ export default function ({ path }) {
 function Hero() {
     return (
         <div
-            className='hero-wrapper w-full px-12 py-12 rounded-2xl bg-theme-accent-2 flex flex-col content-center gap-y-10 md:flex-row md:gap-x-10 md:px-7'>
-            <h1 className='hero-title text-8xl h-fit font-extrabold mb-8 md:hidden'>
+            className='hero-wrapper w-full px-5 py-5 rounded-2xl bg-theme-accent-2 flex flex-col content-center gap-y-6 md:flex-row md:gap-x-10 md:px-7'>
+            <h1 className='hero-title text-4xl align-center h-fit font-extrabold md:hidden'>
                 Hi, i'm a Student <br/>
                 + Web Developer
             </h1>
@@ -41,7 +41,7 @@ function Hero() {
                 <img className='w-4/5 rounded-[35px] md:h-full md:w-full md:rounded-[10px]' src={MySelf}
                      alt='my_picture'/>
             </div>
-            <p className='text-3xl text-center mt-8 md:hidden'>
+            <p className='text-lg text-center mt-2 md:hidden'>
                 I'm a student at the University of Applied Sciences Berlin (HTW Berlin).
                 I'm a Full-Stack Web Developer with a passion for building web applications using modern technologies.
                 I'm currently looking for opportunities to work on exciting projects and collaborate with other
@@ -49,28 +49,28 @@ function Hero() {
             </p>
             <div className='flex flex-col w-full md:hidden'>
                 <a href='mailto:nkenengnunlafrancklevy@gmail.com'
-                   className='button-primary py-7 px-10 w-1/3 h- w-fit self-center'>
-                    <span className='mr-5'>Hire Me!</span>
+                   className='button-primary py-3 px-6 w-1/3 h- w-fit self-center'>
+                    <span className='mr-2'>Hire Me!</span>
                     <div>
                         <IconContext.Provider value={{className: 'test'}}>
                             <MdArrowOutward/>
                         </IconContext.Provider>
                     </div>
                 </a>
-                <ul className='flex content-center gap-x-6 mt-10 w-full justify-center'>
+                <ul className='flex content-center gap-x-3 mt-5 w-full justify-center'>
                     <li>
                         <a href='https://www.linkedin.com/in/levy-nkeneng-2b977a304/'>
-                            <FaLinkedinIn size={'3rem'}/>
+                            <FaLinkedinIn size={'1.5rem'}/>
                         </a>
                     </li>
                     <li>
                         <a href='https://github.com/LinkNexus/'>
-                            <FaGithub size={'3rem'}/>
+                            <FaGithub size={'1.5rem'}/>
                         </a>
                     </li>
                     <li>
                         <a href='mailto:nkenengnunlafrancklevy@gmail.com'>
-                            <SiGmail size={'3rem'}/>
+                            <SiGmail size={'1.5rem'}/>
                         </a>
                     </li>
                 </ul>

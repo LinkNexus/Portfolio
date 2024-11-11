@@ -33,7 +33,7 @@ body
 //  --theme-accent-2: #140c1c
 
 .position-center
-  @apply flex content-center justify-center flex-wrap
+  @apply flex flex-row content-center justify-center flex-wrap
 
 .button
   box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24)
@@ -44,7 +44,7 @@ body
     box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24)
 
 .button-primary
-  @apply flex content-center justify-center text-4xl font-semibold button bg-theme-primary rounded-full
+  @apply flex content-center justify-center text-lg font-semibold button bg-theme-primary rounded-full
   &:hover
     background: color.adjust($themePrimary, $lightness: -5%)
 
@@ -95,7 +95,7 @@ header .button:hover
     border: 1px solid $themePrimary
 
 .hero-wrapper ul li
-  @apply p-6
+  @apply p-3
   border-radius: 50%
   border: 1px solid $themePrimary
 

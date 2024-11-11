@@ -35,9 +35,9 @@ export default function ({ path }) {
     return (
         <>
             <header
-                className={(positionY !== 0 ? 'bg-theme-black-2' : '') + ' w-full transition-all sticky top-0 font-normal lg:justify-center flex gap-x-3 justify-between h-fit content-center flex-wrap px-10 py-10 md:px-5 lg:px-3 lg:gap-x-2 text-white z-10'}>
+                className={(positionY !== 0 ? 'bg-theme-black-2' : '') + ' w-full transition-all sticky top-0 font-normal lg:justify-center flex gap-x-3 justify-between h-fit content-center flex-wrap px-8 py-8 md:px-5 lg:px-3 lg:gap-x-2 text-white z-10'}>
                 <a className='position-center mr-auto md:mr-0 lg:mr-2' href='/public'>
-                    <img className='w-30 md:w-16' src={Logo} alt="logo"/>
+                    <img className='w-14 md:w-16' src={Logo} alt="logo"/>
                 </a>
                 <a className='content-center font-semibold mr-auto lg:mr-8 justify-center flex-wrap hover:text-theme-primary hidden md:flex'
                    href='mailto:nkenengnunlafrancklevy@gmail.com'>
@@ -73,15 +73,15 @@ export default function ({ path }) {
                     </ul>
                 </nav>
                 <a href='/resume'
-                   className='flex font-semibold md:w-1/4 md:text-lg w-2/5 text-4xl lg:w-max lg:mr-0 lg:px-5 lg:text-base button position-center bg-theme-primary md:mr-2 px-10 rounded-full mr-2 lg:mr-0'>
+                   className='flex-row flex-nowrap font-semibold md:w-1/4 md:text-lg w-5/11 lg:w-max lg:mr-0 lg:px-5 lg:text-base button position-center bg-theme-primary md:mr-2 px-6 rounded-full lg:mr-0'>
                     <span>Resume</span>
-                    <div className='ml-3 h-10 md:h-6 lg:h-5'>
+                    <div className='h-5 align-baseline md:h-6 lg:h-5'>
                         <IconContext.Provider value={{size: 'auto'}}>
                             <LiaDownloadSolid className='align-baseline'/>
                         </IconContext.Provider>
                     </div>
                 </a>
-                <button onClick={toggleMenu} className='flex cursor-pointer position-center lg:hidden h-32 md:h-14'>
+                <button onClick={toggleMenu} className='flex cursor-pointer position-center lg:hidden h-10 md:h-14'>
                     <IconContext.Provider value={{size: 'auto'}}>
                         <CgMenuRight className={toggleMobileMenu ? 'hidden' : 'block'}/>
                     </IconContext.Provider>
@@ -90,8 +90,8 @@ export default function ({ path }) {
                     </IconContext.Provider>
                 </button>
             </header>
-            <nav className={(toggleMobileMenu ? mobileMenuVariants.visible : mobileMenuVariants.hidden) + ' fixed top-[185px] left-0 z-10'}>
-                <ul className='flex text-4xl gap-y-7 font-semibold uppercase content-center flex-col px-5 py-4'>
+            <nav className={(toggleMobileMenu ? mobileMenuVariants.visible : mobileMenuVariants.hidden) + ' fixed top-[100px] left-0 z-10'}>
+                <ul className='flex text-xl gap-y-3 font-semibold uppercase content-center flex-col px-3 py-2'>
                     <li className='flex content-center py-4 px-3 mb-4'>
                         <a href='/'>
                             <span>Home</span>
