@@ -83,40 +83,39 @@ export default function ({ path }) {
                     </div>
                 </a>
                 <button onClick={toggleMenu} className='flex cursor-pointer position-center lg:hidden h-10 md:h-14'>
-                    <div className='h-10'>
-                        <IconContext.Provider value={{className: 'test'}}>
-                            <CgMenuRight className={toggleMobileMenu ? 'hidden' : 'hidden'}/>
+                    <div className='h-full'>
+                        <IconContext.Provider value={{size: 'auto'}}>
+                            <CgMenuRight className={toggleMobileMenu ? 'hidden' : 'block'}/>
                         </IconContext.Provider>
-                        <IconContext.Provider value={{className: 'test'}}>
+                        <IconContext.Provider value={{size: 'auto'}}>
                             <AiOutlineClose className={toggleMobileMenu ? 'block' : 'hidden'}/>
                         </IconContext.Provider>
-                        <Menu />
                     </div>
                 </button>
             </header>
             <nav className={(toggleMobileMenu ? mobileMenuVariants.visible : mobileMenuVariants.hidden) + ' fixed top-[100px] left-0 z-10'}>
-                <ul className='flex text-xl gap-y-3 font-semibold uppercase content-center flex-col px-3 py-2'>
-                    <li className='flex content-center py-4 px-3 mb-4'>
+                <ul className='flex text-xl gap-y-2 font-semibold uppercase content-center flex-col px-3 py-2'>
+                    <li className='flex content-center py-2 px-3 mb-4'>
                         <a href='/'>
                             <span>Home</span>
                         </a>
                     </li>
-                    <li className='flex content-center py-4 px-3 mb-4'>
+                    <li className='flex content-center py-2 px-3 mb-4'>
                         <a href='/about'>
                             <span>About</span>
                         </a>
                     </li>
-                    <li className='flex content-center py-4 px-3 mb-4'>
+                    <li className='flex content-center py-2 px-3 mb-4'>
                         <a href='/services'>
                             <span>Services</span>
                         </a>
                     </li>
-                    <li className='flex content-center py-4 px-3 mb-4'>
+                    <li className='flex content-center py-2 px-3 mb-4'>
                         <a href='/projects'>
                             <span>Projects</span>
                         </a>
                     </li>
-                    <li className='flex content-center py-4 px-3 mb-4'>
+                    <li className='flex content-center py-2 px-3'>
                         <a href='/contact'>
                             <span>Contact</span>
                         </a>

@@ -143,15 +143,15 @@ function Skills() {
     return (
         <div className='skills-section w-full flex flex-col content-center justify-center flex-wrap mt-32 mb-32'>
             <div className='skills-header w-fit flex flex-col content-center flex-wrap mb-10'>
-                <h2 className='text-center text-8xl mb-10 md:text-6xl'>
+                <h2 className='text-center text-4xl font-bold mb-6 md:text-6xl'>
                     My Skills
                 </h2>
-                <p className='text-4xl text-center md:text-2xl lg:text-xl'>
+                <p className='text-lg text-center md:text-2xl lg:text-xl'>
                     These are the different stacks i learned or began to learn during my journey as a web developer,
                     these mainly through self-learning.
                 </p>
             </div>
-            <div className='skills-categories w-full flex justify-center gap-x-10 text-2xl text-theme-primary md:text-xl lg:text-xl'>
+            <div className='skills-categories w-full flex justify-center gap-x-5 text-lg text-theme-primary md:text-xl lg:text-xl'>
                 <button
                     onClick={setFrontEnd}
                     className={activeClassIf(activeSkills)}>
@@ -164,7 +164,7 @@ function Skills() {
                 </button>
             </div>
             <div
-                className={(!activeSkills ? 'hidden' : '') + ' skills-list flex gap-8 w-full flex-wrap justify-between mt-10 px-5 py-3'}>
+                className={(!activeSkills ? 'hidden' : '') + ' skills-list flex gap-4 w-full flex-wrap justify-between mt-10 px-5 py-3'}>
                 <div className='skill'>
                     <div>
                         <img src={HTMLImage} alt='html'/>
@@ -204,7 +204,7 @@ function Skills() {
             </div>
 
             <div
-                className={(activeSkills ? 'hidden' : '') + ' skills-list flex gap-8 w-full flex-wrap justify-between mt-10 px-5 py-3'}>
+                className={(activeSkills ? 'hidden' : '') + ' skills-list flex gap-4 w-full flex-wrap justify-between mt-10 px-5 py-3'}>
                 <div className='skill'>
                     <div>
                         <img src={PHPImage} alt='php'/>
@@ -278,7 +278,7 @@ function RecentProjects() {
     return (
         <div className='w-full flex flex-col content-center'>
             <h2 className='recent-projects-header'>Recent Projects</h2>
-            <div className='projects-list px-6'>
+            <div className='projects-list'>
                 {projects.map((project, index) => (
                     <Project key={index} project={project}/>
                 ))}
@@ -289,19 +289,28 @@ function RecentProjects() {
 
 function Project({ project }) {
     return (
-        <div className='bg-theme-accent-2 project flex flex-col content-center px-5 gap-y-10'>
-            <a className='w-auto flex content-center justify-center flex-wrap' href={project.githubLink}>
-                <img className='w-[750px]' src={project.image} alt={project.name}/>
+        <div className='bg-theme-accent-2 project flex flex-col content-center justify-center px-5 gap-y-5 py-5'>
+            <a className='w-9/10 mx-auto flex content-center justify-center flex-wrap' href={project.githubLink}>
+                <img className='w-full' src={project.image} alt={project.name}/>
             </a>
-            <div className='mt-6 flex flex-col gap-y-6 text-3xl'>
-                <h3 className='text-6xl font-extrabold text-center'>
+            <div className='mt-6 flex flex-col gap-y-3 text-base'>
+                <h3 className='text-2xl font-extrabold text-center'>
                     {project.name}
                 </h3>
                 <p className='text-center'>
                     {project.description}
                 </p>
-                {project.link && <a className='text-white font-bold bg-theme-primary py-5 rounded-full my-5 text-center w-full' href={project.link}>Live Demo</a>}
-                <div className='flex justify-center gap-x-5 flex-wrap'>
+                {project.link &&
+                    <a className='mx-auto flex content-center justify-center text-white font-bold bg-theme-primary py-2 rounded-full my-2 text-center w-fit px-6 py-3'
+                       href={project.link}>
+                        <span>Live Demo</span>
+                        <div>
+                            <IconContext.Provider value={{className: 'test'}}>
+                                <MdArrowOutward/>
+                            </IconContext.Provider>
+                        </div>
+                    </a>}
+                <div className='flex justify-center gap-2 flex-wrap'>
                     {project.tags.map((tag, index) => (
                         <span className='tag font-semibold' key={index}>{tag}</span>
                     ))}

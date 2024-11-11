@@ -120,7 +120,7 @@ header .button:hover
 
 .skills-categories
   & button
-    @apply flex justify-center content-center rounded-full px-9 py-5 transition-all
+    @apply flex justify-center content-center rounded-full px-5 py-2 transition-all
     border: 1px solid $themeSecondary
 
     &:hover:not(.active)
@@ -133,19 +133,19 @@ header .button:hover
 
 
 .skill
-  @apply w-[400px] bg-theme-accent-2 flex flex-col content-center justify-center p-6 rounded-3xl shadow-lg flex-wrap gap-y-8
+  @apply w-[150px] bg-theme-accent-2 flex flex-col content-center justify-center p-3 rounded-3xl shadow-lg flex-nowrap gap-y-4
   border: 1px solid var(--tj-theme-secondary)
   box-shadow: 0 0 30px rgba(135, 80, 247, 0.2)
 
   & div
-    @apply w-2/3 h-2/3 flex content-center justify-center flex-wrap grayscale transition-all
+    @apply w-1/2 h-1/2 flex content-center justify-center flex-wrap grayscale transition-all mx-auto
 
     & img
         @apply w-full h-full
         transition: 0.5s ease-in-out
 
   & span
-    @apply text-4xl w-auto text-center font-bold
+    @apply w-auto text-center font-bold
 
   &:hover
     border: 1px solid $themePrimary
@@ -172,7 +172,7 @@ header .button:hover
       @apply h-auto text-xl
 
 .recent-projects-header
-  @apply text-center text-8xl mb-10
+  @apply text-center text-4xl font-bold mb-10
   background-image: linear-gradient(to right, $themePrimary 0%, $themeWhite 100%)
   -webkit-text-fill-color: transparent
   -webkit-background-clip: text
@@ -182,14 +182,12 @@ header .button:hover
   border: 1px solid var(--tj-theme-secondary)
   box-shadow: 0 0 30px rgba(135, 80, 247, 0.2)
   border-radius: 20px
-  padding-top: 2.875rem
-  padding-bottom: 2.875rem
 
   & a img
     border-radius: 10px
 
   & .tag
-    @apply flex justify-center content-center rounded-full px-9 py-5 transition-all
+    @apply flex justify-center content-center rounded-full px-5 py-3 transition-all text-sm
     border: 1px solid $themeSecondary
 
 @media (min-width: 1024px)
