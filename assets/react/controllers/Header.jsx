@@ -76,24 +76,35 @@ export default function ({ path }) {
                 <a href='/resume'
                    className='flex-row flex-nowrap font-semibold md:w-1/4 md:text-lg w-5/11 lg:w-max lg:mr-0 lg:px-5 lg:text-base button position-center bg-theme-primary md:mr-2 px-6 rounded-full lg:mr-0'>
                     <span>Resume</span>
-                    <div className='h-full align-baseline md:h-6 lg:h-5'>
+                    <div className='align-baseline md:h-6 lg:h-5'>
                         <IconContext.Provider value={{className: 'test'}}>
                             <LiaDownloadSolid className='align-baseline'/>
                         </IconContext.Provider>
                     </div>
                 </a>
-                <button onClick={toggleMenu} className='flex cursor-pointer position-center lg:hidden h-10 md:h-14'>
+                <button onClick={toggleMenu} className='flex md:hidden cursor-pointer position-center lg:hidden h-10 md:h-14'>
                     <div className=''>
                         <IconContext.Provider value={{className: 'test'}}>
-                            <CgMenuRight className={toggleMobileMenu ? 'hidden' : 'block'}/>
+                            <CgMenuRight size={'2.5rem'}  className={toggleMobileMenu ? 'hidden' : 'block'}/>
                         </IconContext.Provider>
                         <IconContext.Provider value={{className: 'test'}}>
-                            <AiOutlineClose className={toggleMobileMenu ? 'block' : 'hidden'}/>
+                            <AiOutlineClose size={'2.5rem'} className={toggleMobileMenu ? 'block' : 'hidden'}/>
+                        </IconContext.Provider>
+                    </div>
+                </button>
+                <button onClick={toggleMenu} className='md:flex hidden cursor-pointer flex content-center justify-center lg:hidden h-10 md:h-14'>
+                    <div className=''>
+                        <IconContext.Provider value={{className: 'test'}}>
+                            <CgMenuRight size={'3.5rem'}  className={toggleMobileMenu ? 'hidden' : 'block'}/>
+                        </IconContext.Provider>
+                        <IconContext.Provider value={{className: 'test'}}>
+                            <AiOutlineClose size={'3.5rem'}  className={toggleMobileMenu ? 'block' : 'hidden'}/>
                         </IconContext.Provider>
                     </div>
                 </button>
             </header>
-            <nav className={(toggleMobileMenu ? mobileMenuVariants.visible : mobileMenuVariants.hidden) + ' fixed top-[100px] left-0 z-10'}>
+            <nav
+                className={(toggleMobileMenu ? mobileMenuVariants.visible : mobileMenuVariants.hidden) + ' fixed top-[100px] left-0 z-10'}>
                 <ul className='flex text-xl gap-y-2 font-semibold uppercase content-center flex-col px-3 py-2'>
                     <li className='flex content-center py-2 px-3 mb-4'>
                         <a href='/'>
