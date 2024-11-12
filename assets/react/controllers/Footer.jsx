@@ -10,7 +10,7 @@ export default function ({ path }) {
                 </a>
             </div>
             <nav>
-                <ul className='w-full h-14 font-extrabold text-white flex justify-center content-center text-sm gap-x-3 md:text-lg'>
+                <ul className='w-full h-14 font-extrabold text-white flex justify-center content-center text-sm gap-x-3 md:text-base'>
                     <li className='flex content-center'>
                         <a className={activeClassIf(path === '', ' h-full')} href='/'>
                             <span>Home</span>
@@ -38,7 +38,7 @@ export default function ({ path }) {
                     </li>
                 </ul>
             </nav>
-            <p className='mt-5 text-[#636363] text-sm text-center md:text-lg'>
+            <p className='mt-5 text-[#636363] text-sm text-center md:text-base'>
                 © 2024 All rights reserved by <a className='text-white hover:text-theme-primary' href='https://www.linkedin.com/in/levy-nkeneng-2b977a304/'>Levy Nkeneng</a>
             </p>
         </footer>
