@@ -325,16 +325,16 @@ function ContactZone() {
     return (
         <div className='w-full contact-zone mt-32 p-10 rounded-3xl' data-aos='fade-up'>
             <h2 className='contact-zone-header md:text-6xl'>Need my Help?</h2>
-            <div className='contact-button'>
-                <a className='flex justify-center content-center' href='mailto:nkenengnunlafrancklevy@gmail.com'>
+            <a className='contact-button' href='mailto:nkenengnunlafrancklevy@gmail.com'>
+                <div className='flex justify-center content-center'>
                     <span className='mr-3'>Contact Me!</span>
                     <div>
                         <IconContext.Provider value={{className: 'test'}}>
                             <MdArrowOutward/>
                         </IconContext.Provider>
                     </div>
-                </a>
-            </div>
+                </div>
+            </a>
         </div>
     );
 }
