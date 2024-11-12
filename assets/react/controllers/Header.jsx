@@ -83,11 +83,11 @@ export default function ({ path }) {
                     </div>
                 </a>
                 <button onClick={toggleMenu} className='flex cursor-pointer position-center lg:hidden h-10 md:h-14'>
-                    <div className='h-full'>
-                        <IconContext.Provider value={{size: 'auto'}}>
+                    <div className=''>
+                        <IconContext.Provider value={{className: 'test'}}>
                             <CgMenuRight className={toggleMobileMenu ? 'hidden' : 'block'}/>
                         </IconContext.Provider>
-                        <IconContext.Provider value={{size: 'auto'}}>
+                        <IconContext.Provider value={{className: 'test'}}>
                             <AiOutlineClose className={toggleMobileMenu ? 'block' : 'hidden'}/>
                         </IconContext.Provider>
                     </div>
