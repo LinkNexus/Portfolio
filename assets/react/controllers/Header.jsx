@@ -76,8 +76,8 @@ export default function ({ path }) {
                 <a href='/resume'
                    className='flex-row flex-nowrap font-semibold md:w-1/4 md:text-lg w-5/11 lg:w-max lg:mr-0 lg:px-5 lg:text-base button position-center bg-theme-primary md:mr-2 px-6 rounded-full lg:mr-0'>
                     <span>Resume</span>
-                    <div className='h-5 align-baseline md:h-6 lg:h-5'>
-                        <IconContext.Provider value={{size: 'auto'}}>
+                    <div className='h-full align-baseline md:h-6 lg:h-5'>
+                        <IconContext.Provider value={{className: 'test'}}>
                             <LiaDownloadSolid className='align-baseline'/>
                         </IconContext.Provider>
                     </div>
