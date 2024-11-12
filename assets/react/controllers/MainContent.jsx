@@ -166,37 +166,37 @@ function Skills() {
             </div>
             <div
                 className={(!activeSkills ? 'hidden' : '') + ' skills-list flex gap-4 w-full flex-wrap justify-center mt-10 px-5 py-3'}>
-                <div className='skill'>
+                <div className='skill' data-aos='slide-right'>
                     <div>
                         <img src={HTMLImage} alt='html'/>
                     </div>
                     <span>HTML</span>
                 </div>
-                <div className='skill'>
+                <div className='skill' data-aos='slide-left'>
                     <div>
                         <img src={CSSImage} alt='css'/>
                     </div>
                     <span>CSS</span>
                 </div>
-                <div className='skill'>
+                <div className='skill' data-aos='slide-right'>
                     <div>
                         <img src={TailwindImage} alt='tailwind'/>
                     </div>
                     <span>Tailwind</span>
                 </div>
-                <div className='skill'>
+                <div className='skill' data-aos='slide-left'>
                     <div>
                         <img src={SassImage} alt='sass'/>
                     </div>
                     <span>Saas</span>
                 </div>
-                <div className='skill'>
+                <div className='skill' data-aos='slide-right'>
                     <div>
                         <img src={JSImage} alt='javascript'/>
                     </div>
                     <span>JavaScript</span>
                 </div>
-                <div className='skill'>
+                <div className='skill' data-aos='slide-left'>
                     <div>
                         <img src={ReactImage} alt='react'/>
                     </div>
@@ -206,13 +206,13 @@ function Skills() {
 
             <div
                 className={(activeSkills ? 'hidden' : '') + ' skills-list flex gap-4 w-full flex-wrap justify-between mt-10 px-5 py-3'}>
-                <div className='skill'>
+                <div className='skill' data-aos='slide-right'>
                     <div>
                         <img src={PHPImage} alt='php'/>
                     </div>
                     <span>PHP</span>
                 </div>
-                <div className='skill'>
+                <div className='skill' data-aos='slide-left'>
                     <div>
                         <img src={SymfonyImage} alt='symfony'/>
                     </div>
@@ -290,7 +290,7 @@ function RecentProjects() {
 
 function Project({ project }) {
     return (
-        <div className='bg-theme-accent-2 project flex flex-col content-center justify-center px-8 gap-y-5 py-8 lg:w-[47%]'>
+        <div className='bg-theme-accent-2 project flex flex-col content-center justify-center px-8 gap-y-5 py-8 lg:w-[47%]' data-aos='fade-up'>
             <a className='w-8/10 mx-auto flex content-center justify-center flex-wrap' href={project.githubLink}>
                 <img className='w-full' src={project.image} alt={project.name}/>
             </a>
@@ -323,7 +323,7 @@ function Project({ project }) {
 
 function ContactZone() {
     return (
-        <div className='w-full contact-zone mt-32 p-10 rounded-3xl'>
+        <div className='w-full contact-zone mt-32 p-10 rounded-3xl' data-aos='fade-up'>
             <h2 className='contact-zone-header md:text-6xl'>Need my Help?</h2>
             <div className='contact-button'>
                 <a className='flex justify-center content-center' href='mailto:nkenengnunlafrancklevy@gmail.com'>
