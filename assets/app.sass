@@ -201,6 +201,23 @@ header .button:hover
     &:hover
       background: color.adjust($themePrimary, $lightness: -5%)
 
+.contact-zone
+  border: 1px solid $themeSecondary
+  box-shadow: 0 0 30px rgba(135, 80, 247, 0.2)
+  @apply bg-theme-accent-2
+
+.contact-zone-header
+    @apply text-center text-4xl font-bold mb-10
+    background-image: linear-gradient(to right, $themePrimary 0%, $themeWhite 100%)
+    -webkit-text-fill-color: transparent
+    -webkit-background-clip: text
+    background-clip: text
+
+.contact-button
+  @apply flex content-center justify-center text-2xl py-6 text-white font-semibold button bg-theme-primary rounded-full flex-wrap
+  &:hover
+    background: color.adjust($themePrimary, $lightness: -5%)
+
 @media (min-width: 1024px)
   .skills-categories button
     @apply px-6 py-3 text-xl

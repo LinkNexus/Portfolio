@@ -25,6 +25,7 @@ export default function ({ path }) {
             <Hero />
             <Skills />
             <RecentProjects />
+            <ContactZone />
         </section>
     );
 }
@@ -315,6 +316,24 @@ function Project({ project }) {
                         <span className='tag font-semibold md:text-base' key={index}>{tag}</span>
                     ))}
                 </div>
+            </div>
+        </div>
+    );
+}
+
+function ContactZone() {
+    return (
+        <div className='w-full contact-zone mt-32 p-10 rounded-3xl'>
+            <h2 className='contact-zone-header md:text-6xl'>Need my Help?</h2>
+            <div className='contact-button'>
+                <a className='flex justify-center content-center' href='mailto:nkenengnunlafrancklevy@gmail.com'>
+                    <span className='mr-3'>Contact Me!</span>
+                    <div>
+                        <IconContext.Provider value={{className: 'test'}}>
+                            <MdArrowOutward/>
+                        </IconContext.Provider>
+                    </div>
+                </a>
             </div>
         </div>
     );
