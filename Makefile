@@ -3,7 +3,7 @@ server := "levynkeneng.dev@212.47.70.2"
 .PHONY: install deploy
 
 deploy:
-	ssh -A $(server) 'cd domains/public_html && git fetch && git pull && make install'
+	ssh -A $(server) 'cd public_html && git fetch && git pull && make install'
 
 install: vendor/autoload.php
 	npm install
