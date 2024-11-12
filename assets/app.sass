@@ -44,9 +44,13 @@ body
     box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24)
 
 .button-primary
-  @apply flex content-center justify-center text-lg font-semibold button bg-theme-primary rounded-full
+  @apply flex content-center justify-center text-lg font-semibold button rounded-full
+  background: linear-gradient(to right, $themePrimary, $themeSecondary)
   &:hover
-    background: color.adjust($themePrimary, $lightness: -5%)
+    background: linear-gradient(to right, $themeSecondary, $themePrimary)
+
+.resume-button
+  background: linear-gradient(to right, $themePrimary, $themeSecondary)
 
 nav a
   z-index: 1
@@ -74,7 +78,7 @@ header.bg-theme-black-2
   box-shadow: 0 0 30px rgba(135, 80, 247, 0.2)
 
 header .button:hover
-  background: color.adjust($themePrimary, $lightness: -5%)
+  background: linear-gradient(to right, $themeSecondary, $themePrimary)
 
 .hero-wrapper
   border: 1px solid $themeSecondary
@@ -125,12 +129,12 @@ header .button:hover
     border: 1px solid $themeSecondary
 
     &:hover:not(.active)
-      background: $themePrimary
+      background: linear-gradient(to right, $themePrimary, $themeSecondary)
       color: $themeWhite
 
     &.active
-        background: $themePrimary
-        color: $themeWhite
+      background: linear-gradient(to right, $themeSecondary, $themePrimary)
+      color: $themeWhite
 
 
 .skill
@@ -198,8 +202,9 @@ header .button:hover
     background: $themeSecondary
 
   & .project-live-preview
+    background: linear-gradient(to right, $themePrimary, $themeSecondary)
     &:hover
-      background: color.adjust($themePrimary, $lightness: -5%)
+      background: linear-gradient(to right, $themeSecondary, $themePrimary)
 
 .contact-zone
   border: 1px solid $themeSecondary
@@ -214,9 +219,10 @@ header .button:hover
     background-clip: text
 
 .contact-button
-  @apply flex content-center justify-center text-2xl py-6 text-white font-semibold button bg-theme-primary rounded-full flex-wrap
+  @apply flex content-center justify-center text-2xl py-6 text-white font-semibold button rounded-full flex-wrap
+  background: linear-gradient(to right, $themePrimary, $themeSecondary)
   &:hover
-    background: color.adjust($themePrimary, $lightness: -5%)
+    background: linear-gradient(to right, $themeSecondary, $themePrimary)
 
 @media (min-width: 1024px)
   .skills-categories button

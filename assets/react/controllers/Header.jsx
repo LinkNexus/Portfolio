@@ -11,7 +11,6 @@ import Resume from '../../images/resume.pdf';
 export default function ({ path }) {
     const [toggleMobileMenu, setToggleMobileMenu] = useState(false);
     const [positionY, setPositionY] = useState(window.scrollY);
-    console.log(path)
 
     useEffect(() => {
         const handleScroll = () => {
@@ -75,7 +74,7 @@ export default function ({ path }) {
                     </ul>
                 </nav>
                 <a href={Resume} download='Levy_Nkeneng_Resume.pdf'
-                   className='flex-row flex-nowrap font-semibold md:w-1/4 md:text-lg w-5/11 lg:w-max lg:mr-0 lg:px-5 lg:text-base button position-center bg-theme-primary md:mr-2 px-6 rounded-full lg:mr-0'>
+                   className='resume-button flex-row flex-nowrap font-semibold md:w-1/4 md:text-lg w-5/11 lg:w-max lg:mr-0 lg:px-5 lg:text-base button position-center md:mr-2 px-6 rounded-full lg:mr-0'>
                     <span>Resume</span>
                     <div className='align-baseline md:h-6 lg:h-5 relative top-1 ml-1'>
                         <IconContext.Provider value={{className: 'test'}}>
