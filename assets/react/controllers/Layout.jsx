@@ -14,7 +14,7 @@ export default function () {
             <div>
                 {path !== '' && <div className='breadcrumb z-[2] relative bottom-[110px] flex flex-wrap w-full flex-col content-center justify-center relative py-10'>
                     <div className='mt-36 md:mb-12'>
-                        <h2 className='text-4xl lg:text-6xl font-extrabold mb-5 text-center'>About</h2>
+                        <h2 className='text-4xl lg:text-6xl font-extrabold mb-5 text-center'>{path[0].toUpperCase() + path.slice(1)}</h2>
                         <div className='flex content-center justify-center text-lg gap-x-2'>
                             <a href='/' className='hover:underline underline-offset-4'>Home</a>
                             <IconContext.Provider value={{className: 'test'}}>
