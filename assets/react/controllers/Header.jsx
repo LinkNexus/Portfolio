@@ -37,7 +37,7 @@ export default function ({ path }) {
         <>
             <header
                 className={(positionY !== 0 ? 'bg-theme-black-2' : '') + ' w-full transition-all sticky top-0 font-normal lg:justify-center flex gap-x-3 justify-between h-fit content-center flex-wrap px-8 py-8 md:px-5 lg:px-3 lg:gap-x-2 text-white z-10'}>
-                <a className='position-center mr-auto md:mr-0 lg:mr-2' href='/public'>
+                <a className='position-center mr-auto md:mr-0 lg:mr-2' href='/'>
                     <img className='w-14 md:w-16' src={Logo} alt="logo"/>
                 </a>
                 <a className='content-center font-semibold mr-auto lg:mr-8 justify-center flex-wrap hover:text-theme-primary hidden md:flex'
