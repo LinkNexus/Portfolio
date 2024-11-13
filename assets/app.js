@@ -8,6 +8,7 @@ import "./images/favicon/apple-touch-icon.png";
 import "./images/favicon/site.webmanifest";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import './images/thumbnail.png';
 
 AOS.init({
     duration: 1000
