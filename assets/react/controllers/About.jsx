@@ -33,7 +33,7 @@ function Skills() {
 
     return (
         <div className='skills-section w-full flex flex-col content-center justify-center flex-wrap mt-10 py-20 rounded-3xl about-skills mb-32'>
-            <div className='skills-header w-fit flex flex-col content-center flex-wrap mb-10'>
+            <div className='skills-header w-full flex flex-col content-center flex-wrap mb-10'>
                 <h2 className='text-center text-4xl font-bold mb-6 md:text-6xl'>
                     My Skills
                 </h2>
@@ -130,7 +130,7 @@ function Contact() {
             <a href='mailto:nkenengnunlafrancklevy@gmail.com'
                onMouseOver={handleHover}
                onMouseLeave={handleMouseLeave}
-               className='text-xl font-medium flex gap-x-2 hover:underline underline-offset-[6px] md:text-3xl font-bold self-end'
+               className='text-xl text-white font-medium flex gap-x-2 hover:underline underline-offset-[6px] md:text-3xl font-bold self-end'
                data-aos='fade-left'
             >
                 <span>nkeneng@gmail.com</span>

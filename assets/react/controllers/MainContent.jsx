@@ -196,7 +196,7 @@ function Skills() {
 
     return (
         <div className='skills-section w-full flex flex-col content-center justify-center flex-wrap mt-32 mb-32'>
-            <div className='skills-header w-fit flex flex-col content-center flex-wrap mb-10'>
+            <div className='skills-header w-full flex flex-col content-center flex-wrap mb-10'>
                 <h2 className='text-center text-4xl font-bold mb-6 md:text-6xl'>
                     My Skills
                 </h2>
