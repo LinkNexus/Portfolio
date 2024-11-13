@@ -131,7 +131,7 @@ function Contact() {
                onMouseOver={handleHover}
                onMouseLeave={handleMouseLeave}
                className='text-xl font-medium flex gap-x-2 hover:underline underline-offset-[6px] md:text-3xl font-bold self-end'
-               data-aos='slide-left'
+               data-aos='fade-left'
             >
                 <span>nkeneng@gmail.com</span>
                 {!hovered && <IconContext.Provider value={{className: 'test'}}>

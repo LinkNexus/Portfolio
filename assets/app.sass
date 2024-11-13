@@ -244,6 +244,28 @@ header .button:hover
     -webkit-background-clip: text
     background-clip: text
 
+.services-header
+    @apply text-center text-4xl font-bold mb-5
+    background-image: linear-gradient(to right, $themePrimary 0%, $themeWhite 100%)
+    -webkit-text-fill-color: transparent
+    -webkit-background-clip: text
+    background-clip: text
+
+.service
+  border: 1px solid $themePrimary
+  border-radius: 10px
+  transition-duration: 0.5s
+  transition-property: all
+  transition-timing-function: ease-in-out
+
+  &:hover
+    border: 1px solid $themeWhite
+    svg
+      fill: $themeWhite
+      transition-duration: 0.5s
+      transition-property: all
+      transition-timing-function: ease-in-out
+
 @media (min-width: 768px)
   .skills-list
     @apply justify-center
@@ -281,3 +303,6 @@ header .button:hover
 
   .about-contact-header
     font-size: 7.25rem
+
+  .service
+    width: 47%
