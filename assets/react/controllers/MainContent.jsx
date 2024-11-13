@@ -19,21 +19,21 @@ import SimpleReactBlogImage from '../../images/projects/simple-react-blog.png';
 import SymfonyBlogImage from '../../images/projects/symfony-blog.png';
 import SocialNetworkPHPImage from '../../images/projects/social-network-php.png';
 
-export default function ({ path }) {
+export default function () {
     return (
-        <section className='px-4 mt-10 px-12 lg:px-24'>
+        <>
             <Hero />
             <Skills />
             <RecentProjects />
             <ContactZone />
-        </section>
+        </>
     );
 }
 
 function Hero() {
     return (
         <div
-            className='hero-wrapper w-full px-5 py-8 rounded-2xl bg-theme-accent-2 flex flex-col content-center gap-y-6 md:flex-row md:gap-x-10 md:px-7'>
+            className='hero-wrapper w-full px-5 py-8 rounded-2xl flex flex-col content-center gap-y-6 md:flex-row md:gap-x-10 md:px-7'>
             <h1 className='hero-title w-full text-4xl text-center h-fit font-extrabold md:hidden'>
                 Hi, i'm a Student <br/>
                 + Web Developer
@@ -166,37 +166,37 @@ function Skills() {
             </div>
             <div
                 className={(!activeSkills ? 'hidden' : '') + ' skills-list flex gap-4 w-full flex-wrap justify-center mt-10 px-5 py-3'}>
-                <div className='skill' data-aos='slide-right'>
+                <div className='skill' data-aos='fade-down'>
                     <div>
                         <img src={HTMLImage} alt='html'/>
                     </div>
                     <span>HTML</span>
                 </div>
-                <div className='skill' data-aos='slide-left'>
+                <div className='skill' data-aos='fade-down'>
                     <div>
                         <img src={CSSImage} alt='css'/>
                     </div>
                     <span>CSS</span>
                 </div>
-                <div className='skill' data-aos='slide-right'>
+                <div className='skill' data-aos='fade-down'>
                     <div>
                         <img src={TailwindImage} alt='tailwind'/>
                     </div>
                     <span>Tailwind</span>
                 </div>
-                <div className='skill' data-aos='slide-left'>
+                <div className='skill' data-aos='fade-down'>
                     <div>
                         <img src={SassImage} alt='sass'/>
                     </div>
                     <span>Saas</span>
                 </div>
-                <div className='skill' data-aos='slide-right'>
+                <div className='skill' data-aos='fade-down'>
                     <div>
                         <img src={JSImage} alt='javascript'/>
                     </div>
                     <span>JavaScript</span>
                 </div>
-                <div className='skill' data-aos='slide-left'>
+                <div className='skill' data-aos='fade-down'>
                     <div>
                         <img src={ReactImage} alt='react'/>
                     </div>
@@ -205,14 +205,14 @@ function Skills() {
             </div>
 
             <div
-                className={(activeSkills ? 'hidden' : '') + ' skills-list flex gap-4 w-full flex-wrap justify-between mt-10 px-5 py-3'}>
-                <div className='skill' data-aos='slide-right'>
+                className={(activeSkills ? 'hidden' : '') + ' skills-list flex gap-4 w-full flex-wrap justify-center mt-10 px-5 py-3'}>
+                <div className='skill' data-aos='fade-down'>
                     <div>
                         <img src={PHPImage} alt='php'/>
                     </div>
                     <span>PHP</span>
                 </div>
-                <div className='skill' data-aos='slide-left'>
+                <div className='skill' data-aos='fade-down'>
                     <div>
                         <img src={SymfonyImage} alt='symfony'/>
                     </div>

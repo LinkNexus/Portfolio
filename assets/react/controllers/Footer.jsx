@@ -6,18 +6,13 @@ export default function ({ path }) {
         <footer className='w-full bg-theme-secondary p-5 mt-32 flex flex-col gap-y-5 content-center justify-center flex-wrap'>
             <div className='mt-10 mb-5 position-center'>
                 <a href='/'>
-                    <img className='h-20' src={Logo} alt='logo'/>
+                    <img className='h-14' src={Logo} alt='logo'/>
                 </a>
             </div>
             <nav>
-                <ul className='w-full h-14 font-extrabold text-white flex justify-center content-center text-sm gap-x-3 md:text-base'>
-                    <li className='flex content-center'>
-                        <a className={activeClassIf(path === '', ' h-full')} href='/'>
-                            <span>Home</span>
-                        </a>
-                    </li>
-                    <li className='flex content-center'>
-                        <a className={activeClassIf(path === 'about')} href='/about'>
+                <ul className='w-full font-extrabold text-white flex justify-center content-center h-12 text-sm gap-x-6 md:text-base'>
+                    <li className='flex content-center h-full'>
+                        <a className={activeClassIf(path === 'about', 'h-full')} href='/about'>
                             <span>About</span>
                         </a>
                     </li>
@@ -38,7 +33,7 @@ export default function ({ path }) {
                     </li>
                 </ul>
             </nav>
-            <p className='mt-5 text-[#636363] text-sm text-center md:text-base'>
+            <p className='mt-1 text-[#636363] text-sm text-center md:text-base'>
                 © 2024 All rights reserved by <a className='text-white hover:text-theme-primary' href='https://www.linkedin.com/in/levy-nkeneng-2b977a304/'>Levy Nkeneng</a>
             </p>
         </footer>

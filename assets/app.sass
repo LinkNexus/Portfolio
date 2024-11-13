@@ -83,6 +83,7 @@ header .button:hover
 .hero-wrapper
   border: 1px solid $themeSecondary
   box-shadow: 0 0 30px rgba(135, 80, 247, 0.2)
+  background: linear-gradient(to right, $themeAccent1 55%, $themeSecondary)
 
 .hero-title
   background-image: linear-gradient(to right, $themePrimary 0%, $themeWhite 100%)
@@ -161,21 +162,6 @@ header .button:hover
       & img
         scale: 1.2
 
-@media (min-width: 768px)
-  .skills-list
-    @apply justify-center
-
-  .skill
-    @apply w-[200px] flex-nowrap
-
-    & div
-      @apply w-auto
-      & img
-        @apply w-2/3 h-2/3
-
-    & span
-      @apply h-auto text-xl
-
 .recent-projects-header
   @apply text-center text-4xl font-bold mb-10
   background-image: linear-gradient(to right, $themePrimary 0%, $themeWhite 100%)
@@ -209,7 +195,8 @@ header .button:hover
 .contact-zone
   border: 1px solid $themeSecondary
   box-shadow: 0 0 30px rgba(135, 80, 247, 0.2)
-  @apply bg-theme-accent-2
+  background: linear-gradient(to right, $themeAccent1 55%, $themeSecondary)
+  //@apply bg-theme-accent-2
 
 .contact-zone-header
     @apply text-center text-4xl font-bold mb-10
@@ -223,6 +210,57 @@ header .button:hover
   background: linear-gradient(to right, $themePrimary, $themeSecondary)
   &:hover
     background: linear-gradient(to right, $themeSecondary, $themePrimary)
+
+.breadcrumb
+  background-image: url("./images/breadcrumb-bg.jpg")
+  background-size: cover
+  background-position: center
+  background-repeat: no-repeat
+  background-color: rgb(20, 12, 28)
+  position: relative
+  @apply text-white
+
+  &::before
+    content: ''
+    position: absolute
+    width: 100%
+    height: 100%
+    background-color: rgba(0, 0, 0, 0.5)
+    top: 0
+    left: 0
+    z-index: 1
+
+  & div
+    z-index: 2
+
+.about-skills
+  background: linear-gradient(to right, $themeAccent1 55%, $themeSecondary)
+  border: 1px solid $themeSecondary
+
+.about-contact-header
+    @apply text-5xl font-black mb-3 mt-3
+    background-image: linear-gradient(to right, $themePrimary 0%, $themeWhite 100%)
+    -webkit-text-fill-color: transparent
+    -webkit-background-clip: text
+    background-clip: text
+
+@media (min-width: 768px)
+  .skills-list
+    @apply justify-center
+
+  .skill
+    @apply w-[200px] flex-nowrap
+
+    & div
+      @apply w-auto
+      & img
+        @apply w-2/3 h-2/3
+
+    & span
+      @apply h-auto text-xl
+
+  .about-contact-header
+    font-size: 5.125rem
 
 @media (min-width: 1024px)
   .skills-categories button
@@ -240,3 +278,6 @@ header .button:hover
 
     & span
         @apply text-lg
+
+  .about-contact-header
+    font-size: 7.25rem
