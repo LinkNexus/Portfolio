@@ -28,13 +28,13 @@ export default function () {
         }
     ]
     return (
-        <div className='w-full flex flex-col content-center justify-center flex-wrap rounded-3xl mb-32'>
+        <div className='w-full flex flex-col content-center justify-center flex-wrap rounded-3xl mt-20 mb-32'>
             <div className='w-auto flex flex-col content-center flex-wrap mb-10'>
                 <h2 className='services-header text-center text-4xl font-bold md:text-6xl'>Services</h2>
                 <p className='text-center uppercase text-lg'>Offered Services</p>
             </div>
             <div className='flex gap-y-6 flex-col lg:flex-row services md:px-5 lg:px-0 lg:gap-x-3 flex-wrap lg:justify-center'>
-                {services.map(service => <div className='gap-y-3 flex flex-col service p-5 hover:bg-theme-primary justify-center max-h-[275px] md:p-8'>
+                {services.map((service, index) => <div data-aos={index % 2 === 0 ? 'fade-right' : 'fade-left'} className='gap-y-3 flex flex-col service p-5 hover:bg-theme-primary justify-center md:p-8'>
                     <div className='mb-5'>
                         <IconContext.Provider value={{size: '2.25rem', className: 'fill-theme-primary'}}>
                             {service.icon}

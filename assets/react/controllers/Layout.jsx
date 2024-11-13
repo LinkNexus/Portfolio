@@ -5,6 +5,7 @@ import About from "./About.jsx";
 import {IconContext} from "react-icons";
 import {FaArrowRightLong} from "react-icons/fa6";
 import Services from "./Services.jsx";
+import Projects from "./Projects.jsx";
 
 export default function () {
     const path = location.pathname.replace('/', '');
@@ -28,6 +29,7 @@ export default function () {
                     {path === '' && <MainContent/>}
                     {path === 'about' && <About path={path}/>}
                     {path === 'services' && <Services />}
+                    {path === 'projects' && <Projects />}
                 </section>
             </div>
             <Footer path={path}/>
