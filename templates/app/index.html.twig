@@ -1,4 +1,63 @@
 {% extends 'base.html.twig' %}
 
+{% if form is not null %}
+    {% form_theme form 'tailwind_2_layout.html.twig' %}
+{% endif %}
+
 {% block body %}
+
+    {% if form is not null %}
+        {% set Form %}
+            {{ form_start(form, {
+                attr: {
+                    class: 'flex flex-col'
+                }
+            }) }}
+
+            {% for key, flash in app.flashes %}
+                {% for type, messages in app.flashes %}
+                    <div class="{{ type == 'notice' ? 'text-white ' : 'text-red-500 '}} my-10 p-5 bg-theme-accent-1 rounded-xl min-h-[100px] min-w-full flex flex-wrap self-center align-center text-center w-fit">
+                        <ul class="w-full flex flex-col justify-center">
+                            {% for message in messages %}
+                                <li class="mb-2">{{ message }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endfor %}
+            {% endfor %}
+
+            <div class="flex flex-col w-full mb-8">
+                {{ form_widget(form.name) }}
+                {{ form_errors(form.name) }}
+            </div>
+
+            <div class="flex flex-col w-full mb-8">
+                {{ form_widget(form.email) }}
+                {{ form_errors(form.email) }}
+            </div>
+
+            <div class="flex flex-col w-full mb-8">
+                {{ form_widget(form.message) }}
+                {{ form_errors(form.message) }}
+            </div>
+
+            {{ form_widget(form.captcha) }}
+
+            {{ form_row(form.submit) }}
+
+            {{ form_end(form) }}
+        {% endset %}
+    {% else %}
+        {% set Form = null %}
+    {% endif %}
+
+    <div {{ react_component('Layout', {
+        csrfToken: csrf_token('contact_form'),
+        form: Form
+    }) }} >
+        <div class="flex max-w-screen flex-col flex-wrap content-center justify-center w-screen h-screen">
+            <twig:Spinner />
+        </div>
+    </div>
+
 {% endblock %}

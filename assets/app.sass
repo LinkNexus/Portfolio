@@ -266,6 +266,43 @@ header .button:hover
       transition-property: all
       transition-timing-function: ease-in-out
 
+.contact-form-container
+  background: linear-gradient(to right, $themeAccent1 55%, $themeSecondary)
+
+  & form
+    @apply py-5
+    & input, & textarea
+      @apply bg-theme-accent-2 mb-5 rounded-lg p-2
+      border: 1px solid $themeSecondary
+
+      &:focus
+        border: 1px solid $themePrimary !important
+
+    & input
+      @apply h-10
+
+    & textarea
+      @apply min-h-52
+
+    & button
+      @apply flex content-center justify-center text-lg font-semibold button rounded-full w-fit py-3 px-8
+      background: linear-gradient(to right, $themePrimary, $themeSecondary)
+      transition: all 0.8s
+      &:hover
+        background: linear-gradient(to right, $themeSecondary, $themePrimary)
+
+
+.contact-form-header
+  & h2
+    @apply text-center font-bold mb-5
+    background-image: linear-gradient(to right, $themePrimary 0%, $themeWhite 100%)
+    -webkit-text-fill-color: transparent
+    -webkit-background-clip: text
+    background-clip: text
+
+.notice
+  border: 1px solid $themePrimary
+
 @media (min-width: 768px)
   .skills-list
     @apply justify-center

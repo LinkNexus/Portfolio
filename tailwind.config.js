@@ -8,6 +8,7 @@ export default {
     './@/components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
+    './vendor/symfony/twig-bridge/Resources/views/Form/*.html.twig',
   ],
   theme: {
     extend: {
