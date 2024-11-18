@@ -9,9 +9,8 @@ import "./images/favicon/site.webmanifest";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import './images/thumbnail.png';
+import './utils/captcha.js';
 
 AOS.init({
     duration: 1000
 });
-
-console.log("Happy coding !!");

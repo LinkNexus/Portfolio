@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use App\DTO\ContactDTO;
 use App\Form\ContactFormType;
-use Karser\Recaptcha3Bundle\Validator\Constraints\Recaptcha3Validator;
+use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -50,20 +50,21 @@ final class AppController extends AbstractController
     }
 
     #[Route('/contact', name: 'app_contact')]
-    public function contact(Request $request, MailerInterface $mailer, Recaptcha3Validator $recaptcha3Validator): Response
+    public function contact(Request $request, MailerInterface $mailer): Response
     {
         $data = new ContactDTO();
         $form = $this->createForm(ContactFormType::class, $data);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-//            $score = $recaptcha3Validator->getLastResponse()->getScore();
-
-            $email = (new Email())
-                ->from(new Address($data->getEmail(), $data->getName()))
+            $email = (new TemplatedEmail())
+                ->from($this->getParameter('sender_email'))
                 ->to($this->getParameter('user_email'))
                 ->subject('Mail from my Portfolio')
-                ->html('<p>'. $data->getMessage() .'</p>');
+                ->htmlTemplate('emails/contact.html.twig')
+                ->context([
+                    'data' => $data
+                ]);
 
             try {
                 $mailer->send($email);

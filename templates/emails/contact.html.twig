@@ -1,0 +1,22 @@
+<div>
+    Here are the details of the mail sender:
+    <ul>
+        <li>
+            Name: <strong>{{ data.name }}</strong>
+        </li>
+        <li>
+            Email Address: <strong>{{ data.email }}</strong>
+        </li>
+        <li>
+            Details about the individual: <strong>{{ data.details | nl2br }}</strong>
+        </li>
+    </ul>
+</div>
+
+<div>
+    Here is the message sent:
+
+    <div>
+        {{ data.message | nl2br }}
+    </div>
+</div>

@@ -3,8 +3,6 @@
 namespace App\Form;
 
 use App\DTO\ContactDTO;
-use Karser\Recaptcha3Bundle\Form\Recaptcha3Type;
-use Karser\Recaptcha3Bundle\Validator\Constraints\Recaptcha3;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -36,10 +34,14 @@ class ContactFormType extends AbstractType
                     'class' => 'form-control'
                 ]
             ])
-            ->add('captcha', Recaptcha3Type::class, [
-                'constraints' => new Recaptcha3(),
-                'action_name' => 'contact',
-                'locale' => 'en',
+            ->add('details', TextareaType::class, [
+                'attr' => [
+                    'placeholder' => 'Details about yourself',
+                    'class' => 'form-control'
+                ]
+            ])
+            ->add('captcha', RecaptchaType::class, [
+                'type' => 'invisible' // (invisible, checkbox)
             ])
             ->add('submit', SubmitType::class, [
                 'label' => 'Send Message',

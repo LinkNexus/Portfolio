@@ -144,7 +144,7 @@
       <path value="$PROJECT_DIR$/vendor/symfony/ux-react" />
       <path value="$PROJECT_DIR$/vendor/symfony/ux-twig-component" />
       <path value="$PROJECT_DIR$/vendor/symfony/sendgrid-mailer" />
-      <path value="$PROJECT_DIR$/vendor/karser/karser-recaptcha3-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/mailjet-mailer" />
       <path value="$PROJECT_DIR$/vendor/google/recaptcha" />
     </include_path>
   </component>

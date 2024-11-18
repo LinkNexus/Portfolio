@@ -19,7 +19,10 @@ class ContactDTO
     #[Assert\NotBlank]
     private string $message;
 
-    public ?string $captcha;
+    #[Assert\NotBlank]
+    private string $details;
+
+    public array $captcha;
 
     public function getName(): ?string
     {
@@ -51,6 +54,17 @@ class ContactDTO
     public function setMessage(string $message): static
     {
         $this->message = $message;
+        return $this;
+    }
+
+    public function getDetails(): string
+    {
+        return $this->details;
+    }
+
+    public function setDetails(string $details): static
+    {
+        $this->details = $details;
         return $this;
     }
 }
