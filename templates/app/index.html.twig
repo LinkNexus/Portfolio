@@ -4,6 +4,13 @@
     {% form_theme form 'tailwind_2_layout.html.twig' %}
 {% endif %}
 
+
+{% block keyword %}
+    {% if path is not null and path != '' %}
+        {{ 'Levy Nkeneng - ' ~ path }}
+    {% endif %}
+{% endblock %}
+
 {% block body %}
 
     {% if form is not null %}
