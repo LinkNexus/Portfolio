@@ -4,13 +4,13 @@ import en from '../translations/messages-en.json';
 import de from '../translations/messages-de.json';
 import fr from '../translations/messages-fr.json';
 
-let locale = '';
+let locale = location.pathname.split('/')[1];
 const locales = ['en', 'fr', 'de'];
 
-if (localStorage.getItem("lang")) {
-    locale = localStorage.getItem("lang");
-} else {
-    locale = location.pathname.split('/')[1];
+if (!locales.includes(locale)) {
+    if (localStorage.getItem("lang")) {
+        locale = localStorage.getItem("lang");
+    }
 }
 
 i18n

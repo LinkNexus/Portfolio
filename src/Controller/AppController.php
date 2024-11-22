@@ -102,7 +102,7 @@ final class AppController extends AbstractController
         ];
 
         $urls = [];
-        array_walk($routeNames, function (&$route) use (&$urls) {
+        array_walk($routeNames, function ($route) use (&$urls) {
            $urls[] = $this->generateUrl($route);
         });
 
