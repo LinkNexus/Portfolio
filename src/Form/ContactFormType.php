@@ -60,9 +60,6 @@ class ContactFormType extends AbstractType
                     'class' => 'form-control'
                 ]
             ])
-            ->add('captcha', RecaptchaType::class, [
-                'type' => 'invisible' // (invisible, checkbox)
-            ])
             ->add('submit', SubmitType::class, [
                 'label' => $this->translator->trans('contact.send'),
             ])

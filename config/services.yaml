@@ -6,7 +6,6 @@
 parameters:
     user_email: '%env(USER_EMAIL)%'
     sender_email: '%env(SENDER_EMAIL)%'
-    google_recaptcha_site_key: '%env(GOOGLE_RECAPTCHA_SITE_KEY)%'
 
 services:
     # default configuration for services in *this* file
