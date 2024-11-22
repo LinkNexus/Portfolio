@@ -1,0 +1,89 @@
+{
+  "header": {
+    "links": {
+      "home": "Accueil",
+      "about": "À Propos",
+      "services": "Services",
+      "projects": "Projets",
+      "contact": "Contact"
+    },
+    "resume": "CV"
+  },
+  "mainContent": {
+    "hero": {
+      "title": "Hey! Je suis un étudiant\n+ Dévélopeur Web",
+      "description": "Je suis un étudiant à l'université des sciences appliquées de Berlin (HTW Berlin). Je suis un dévéloppeur web Fullstack avec une vraie passion pour la création d'applications web fonctionelles par le biais de technologies modernes. Je suis actuellement à la recherche d'opportunités afin de travailler sur de nouveaux projets excitants et ce, en collaboration avec d'autres dévéloppeurs.",
+      "description2": "Je suis un dévéloppeur web Fullstack avec une vraie passion pour la création d'applications web fonctionelles par le biais de technologies modernes.",
+      "hireMe": "Engagez-Moi!"
+    },
+    "contact": {
+      "question": "Besoin de mon aide?",
+      "button": "Contactez-Moi!"
+    }
+  },
+  "about": {
+    "contact": {
+      "text": "Sur le point d'entamer un projet?",
+      "title": "Discutons en"
+    }
+  },
+  "skills": {
+    "title": "Mes Compétences",
+    "description": "Ici sont listés les differentes technologies que j'ai eu à apprendre ou debuté à apprendre durant mon temps en tant que dévéloppeur."
+  },
+  "projects": {
+    "title": "Projets Récents",
+    "project": {
+      "firstPortfolio": {
+        "name": "Premier Portfolio",
+        "description": "Ceci est mon premier portfolio, fait avec juste du HTML et du CSS"
+      },
+      "javascriptCalculator": {
+        "name": "Calculatrice JavaScript",
+        "description": "Une Calculatrice simple et fonctionelle fait en JavaScript"
+      },
+      "simpleReactBlog": {
+        "name": "Blog React",
+        "description": "Un simple blog single-page fait en React et Bootstrap CSS."
+      },
+      "symfonyBlog": {
+        "name": "Blog Symfony",
+        "description": "Une application web inspirée de Facebook réalisée avec Symfony."
+      },
+      "socialNetworkPHP": {
+        "name": "Social Network PHP",
+        "description": "Un système de gestion d'utilisateurs couplée d'un blog crées en PHP."
+      }
+    }
+  },
+  "services": {
+    "title": "Services",
+    "description": "Services Proposés",
+    "service": {
+      "frontEndDevelopment": {
+        "title": "Dévélopement Front-End",
+        "description": "Je développe le front-end des sites web en utilisant les dernières technologies et frameworks tels que React, TailwindCSS et Sass."
+      },
+      "backEndDevelopment": {
+        "title": "Dévélopement Back-End",
+        "description": "J'aide à créer des sites web dynamiques en manipulant le serveur à l'aide de PHP et de son framework populaire Symfony."
+      },
+      "responsiveDevelopment": {
+        "title": "Dévélopement Responsive",
+        "description": "Grâce à mon expérience en front-end, je développe des sites web réactifs qui fonctionnent parfaitement sur tous les appareils pour une meilleure expérience utilisateur."
+      },
+      "devopsAndVersionControl": {
+        "title": "DevOps et Versioning",
+        "description": "J'utilise Git pour le contrôle de version et je déploie des sites web en utilisant des scripts dans Maker Bundle et un serveur Ubuntu."
+      }
+    }
+  },
+  "contact": {
+    "title": "Travaillons ensemble!",
+    "description": "Je suis toujours prêt à démarrer de nouveaux projets et à apprendre de nouvelles technologies. Vous pouvez me contacter via ce formulaire pour que nous puissions travailler ensemble."
+  },
+  "footer": {
+    "copyright": "Tout droits réservés par"
+  },
+  "notFound": "Page introuvable"
+}

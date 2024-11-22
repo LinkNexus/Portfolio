@@ -18,59 +18,24 @@ import JavaScriptCalculatorImage from '../../images/projects/javascript-calculat
 import SimpleReactBlogImage from '../../images/projects/simple-react-blog.png';
 import SymfonyBlogImage from '../../images/projects/symfony-blog.png';
 import SocialNetworkPHPImage from '../../images/projects/social-network-php.png';
+import {useTranslation} from "react-i18next";
+import projects from "../../utils/projects.js";
 
-export const projects = [
-    {
-        name: 'First Portfolio',
-        description: 'This is my first portfolio website, built with HTML and CSS.',
-        image: FirstPortfolioImage,
-        link: 'https://firstportfolio.levynkeneng.dev',
-        tags: [
-            'HTML', 'CSS'
-        ],
-        githubLink: 'https://github.com/LinkNexus/First-Portfolio'
-    },
-    {
-        name: 'JavaScript Calculator',
-        description: 'A simple functional calculator built with JavaScript.',
-        image: JavaScriptCalculatorImage,
-        link: null,
-        tags: [
-            'HTML', 'CSS', 'JavaScript'
-        ],
-        githubLink: 'https://github.com/LinkNexus/javascript-calculator'
-    },
-    {
-        name: 'Simple React Blog',
-        description: 'A simple single-page blog built with React and Bootstrap CSS.',
-        image: SimpleReactBlogImage,
-        link: 'https://simplereactblog.levynkeneng.dev',
-        tags: [
-            'React', 'Bootstrap'
-        ],
-        githubLink: 'https://github.com/LinkNexus/SimpleReactBlog'
-    },
-    {
-        name: 'Symfony Blog',
-        description: 'A facebook-like web app built with Symfony.',
-        image: SymfonyBlogImage,
-        link: 'https://symfonyblog.levynkeneng.dev',
-        tags: [
-            'Symfony', 'PHP', 'JavaScript'
-        ],
-        githubLink: 'https://github.com/LinkNexus/Symfony-Blog'
-    },
-    {
-        name: 'Social Network PHP',
-        description: 'A member connection system coupled with a blog system built with PHP.',
-        image: SocialNetworkPHPImage,
-        link: null,
-        tags: [
-            'HTML', 'CSS', 'PHP'
-        ],
-        githubLink: 'https://github.com/LinkNexus/Social-Network'
-    }
-];
+
+
+/**
+ * @param {string} message
+ * @returns {*}
+ */
+const convertLineBreaks = (message) => {
+    const parts = message.split('\n');
+    return parts.map((line, i) => <>{line} {i !== parts.length - 1 ? <br key={i} /> : ''}</>)
+}
+
+const convertCamelCase = (string) => {
+    const parts = string.split(' ');
+    return parts[0].toLowerCase() + parts.filter((part, index) => index !== 0).map((part) => part[0].toUpperCase() + part.substring(1)).join('');
+}
 
 export default function () {
     return (
@@ -84,27 +49,24 @@ export default function () {
 }
 
 function Hero() {
+    const { t } = useTranslation();
     return (
         <div
             className='hero-wrapper w-full px-5 py-8 rounded-2xl flex flex-col content-center gap-y-6 md:flex-row md:gap-x-10 md:px-7'>
             <h1 className='hero-title w-full text-4xl text-center h-fit font-extrabold md:hidden'>
-                Hi, i'm a Student <br/>
-                + Web Developer
+                {convertLineBreaks(t("mainContent.hero.title"))}
             </h1>
             <div className='w-full position-center md:h-full md:w-2/5 md:m-auto lg:w-1/3'>
                 <img className='w-4/5 rounded-[35px] md:h-full md:w-full md:rounded-[10px]' src={MySelf}
                      alt='my_picture'/>
             </div>
             <p className='text-lg text-center mt-2 md:hidden'>
-                I'm a student at the University of Applied Sciences Berlin (HTW Berlin).
-                I'm a Full-Stack Web Developer with a passion for building web applications using modern technologies.
-                I'm currently looking for opportunities to work on exciting projects and collaborate with other
-                developers.
+                {t("mainContent.hero.description")}
             </p>
             <div className='flex flex-col w-full md:hidden'>
                 <a href='mailto:nkenengnunlafrancklevy@gmail.com'
                    className='button-primary py-3 px-6 w-1/3 h- w-fit self-center'>
-                    <span className='mr-2'>Hire Me!</span>
+                    <span className='mr-2'>{t('mainContent.hero.hireMe')}</span>
                     <div>
                         <IconContext.Provider value={{className: 'test'}}>
                             <MdArrowOutward/>
@@ -131,24 +93,18 @@ function Hero() {
             </div>
             <div className='hidden md:flex flex-col content-center w-3/5 lg:w-2/3 lg:m-auto'>
                 <h1 className='hero-title text-8xl h-fit font-extrabold mb-8 md:text-[2.5rem] md:mb-0 md:text-center lg:text-7xl'>
-                    Hi, i'm a Student <br/>
-                    + Web Developer
+                    {convertLineBreaks(t("mainContent.hero.title"))}
                 </h1>
                 <p className='text-3xl text-center mt-8 md:text-xl md:mt-5 md:mb-5 lg:hidden'>
-                    I'm a Full-Stack Web Developer with a passion for building web applications using modern
-                    technologies.
+                    {t("mainContent.hero.description2")}
                 </p>
                 <p className='hidden lg:block text-xl mt-8 mb-8'>
-                    I'm a student at the University of Applied Sciences Berlin (HTW Berlin).
-                    I'm a Full-Stack Web Developer with a passion for building web applications using modern
-                    technologies.
-                    I'm currently looking for opportunities to work on exciting projects and collaborate with other
-                    developers.
+                    {t("mainContent.hero.description")}
                 </p>
                 <div className='flex flex-col w-full lg:flex-row lg:content-center lg:justify-center lg:gap-x-5'>
                     <a href='mailto:nkenengnunlafrancklevy@gmail.com'
                        className='button-primary py-7 px-10 w-1/3 w-fit self-center md:py-5 md:px-7 md:text-2xl lg:max-w-1/4 lg:px-5 lg:py-3 lg:text-xl'>
-                        <span className='mr-5'>Hire Me!</span>
+                        <span className='mr-5'>{t('mainContent.hero.hireMe')}</span>
                         <div className='h-8 lg:h-6'>
                             <IconContext.Provider value={{size: 'auto'}}>
                                 <MdArrowOutward/>
@@ -185,6 +141,7 @@ function Hero() {
 }
 
 function Skills() {
+    const { t } = useTranslation();
     const [activeSkills, setActiveSkills] = useState(true);
     const setFrontEnd = () => {
         setActiveSkills(true);
@@ -198,11 +155,10 @@ function Skills() {
         <div className='skills-section w-full flex flex-col content-center justify-center flex-wrap mt-32 mb-32'>
             <div className='skills-header w-full flex flex-col content-center flex-wrap mb-10'>
                 <h2 className='text-center text-4xl font-bold mb-6 md:text-6xl'>
-                    My Skills
+                    {t('skills.title')}
                 </h2>
                 <p className='text-lg text-center md:text-2xl lg:text-xl'>
-                    These are the different stacks i learned or began to learn during my journey as a web developer,
-                    these mainly through self-learning.
+                    {t('skills.description')}
                 </p>
             </div>
             <div className='skills-categories w-full flex justify-center gap-x-5 text-lg text-theme-primary md:text-xl lg:text-xl'>
@@ -277,9 +233,10 @@ function Skills() {
 }
 
 function RecentProjects() {
+    const { t } = useTranslation();
     return (
         <div className='w-full flex flex-col content-center'>
-            <h2 className='recent-projects-header md:text-6xl'>Recent Projects</h2>
+            <h2 className='recent-projects-header md:text-6xl'>{t('projects.title')}</h2>
             <div className='projects-list flex content-center justify-center flex-col gap-y-10 flex-wrap lg:flex-row lg:gap-x-6'>
                 {projects.map((project, index) => (
                     <Project key={index} index={index} project={project}/>
@@ -290,6 +247,7 @@ function RecentProjects() {
 }
 
 export function Project({ project, index }) {
+    const { t } = useTranslation();
     return (
         <div className='bg-theme-accent-2 project flex flex-col content-center justify-center px-8 gap-y-5 py-8 lg:w-[47%]' data-aos={index % 2 === 0 ? 'fade-right' : 'fade-left'}>
             <a className='w-8/10 mx-auto flex content-center justify-center flex-wrap' href={project.githubLink}>
@@ -297,10 +255,10 @@ export function Project({ project, index }) {
             </a>
             <div className='mt-6 flex flex-col gap-y-3 text-base'>
                 <h3 className='text-2xl md:text-4xl font-extrabold text-center'>
-                    {project.name}
+                    {t(`projects.project.${convertCamelCase(project.name)}.name`)}
                 </h3>
                 <p className='text-center'>
-                    {project.description}
+                    {t(`projects.project.${convertCamelCase(project.name)}.description`)}
                 </p>
                 {project.link &&
                     <a className='mx-auto project-live-preview md:w-2/5 md:min-w-fit flex content-center justify-center text-white font-bold py-2 rounded-full my-2 text-center w-fit px-6 py-3'
@@ -323,12 +281,13 @@ export function Project({ project, index }) {
 }
 
 function ContactZone() {
+    const { t } = useTranslation();
     return (
         <div className='w-full contact-zone mt-32 p-10 rounded-3xl' data-aos='fade-up'>
-            <h2 className='contact-zone-header md:text-6xl'>Need my Help?</h2>
+            <h2 className='contact-zone-header md:text-6xl'>{t('mainContent.contact.question')}</h2>
             <a className='contact-button' href='mailto:nkenengnunlafrancklevy@gmail.com'>
                 <div className='flex justify-center content-center'>
-                    <span className='mr-3'>Contact Me!</span>
+                    <span className='mr-3'>{t('mainContent.contact.button')}</span>
                     <div>
                         <IconContext.Provider value={{className: 'test'}}>
                             <MdArrowOutward/>

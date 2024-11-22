@@ -10,6 +10,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import './images/thumbnail.png';
 import './utils/captcha.js';
+import './utils/i18n.js';
 
 AOS.init({
     duration: 1000

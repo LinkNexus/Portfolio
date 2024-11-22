@@ -1,0 +1,89 @@
+{
+  "header": {
+    "links": {
+      "home": "Home",
+      "about": "About",
+      "services": "Services",
+      "projects": "Projects",
+      "contact": "Contact"
+    },
+    "resume": "Resume"
+  },
+  "mainContent": {
+    "hero": {
+      "title": "Hi! I'm a Student\n+ Web Developer",
+      "description": "I'm a student at the University of Applied Sciences Berlin (HTW Berlin). I'm a Full-Stack Web Developer with a passion for building web applications using modern technologies. I'm currently looking for opportunities to work on exciting projects and collaborate with other developers.",
+      "description2": "I'm a Full-Stack Web Developer with a passion for building web applications using modern technologies.",
+      "hireMe": "Hire Me!"
+    },
+    "contact": {
+      "question": "Need my Help?",
+      "button": "Contact Me!"
+    }
+  },
+  "about": {
+    "contact": {
+      "text": "Want to start a project?",
+      "title": "Let's have a chat"
+    }
+  },
+  "skills": {
+    "title": "My Skills",
+    "description": "These are the different stacks i learned or began to learn during my journey as a web developer, these mainly through self-learning."
+  },
+  "projects": {
+    "title": "Recent Projects",
+    "project": {
+      "firstPortfolio": {
+        "name": "First Portfolio",
+        "description": "This is my first portfolio website, built with HTML and CSS."
+      },
+      "javascriptCalculator": {
+        "name": "JavaScript Calculator",
+        "description": "A simple functional calculator built with JavaScript."
+      },
+      "simpleReactBlog": {
+        "name": "Simple React Blog",
+        "description": "A simple single-page blog built with React and Bootstrap CSS."
+      },
+      "symfonyBlog": {
+        "name": "Symfony Blog",
+        "description": "A facebook-like web app built with Symfony."
+      },
+      "socialNetworkPHP": {
+        "name": "Social Network PHP",
+        "description": "A member connection system coupled with a blog system built with PHP."
+      }
+    }
+  },
+  "services": {
+    "title": "Services",
+    "description": "Offered Services",
+    "service": {
+      "frontEndDevelopment": {
+        "title": "Front-End Development",
+        "description": "I develop the front-end of websites using the latest technologies and frameworks such as React, TailwindCSS, and Sass."
+      },
+      "backEndDevelopment": {
+        "title": "Back-End Development",
+        "description": "I help creating dynamic websites by manipulating the server using PHP and its popular Framework Symfony."
+      },
+      "responsiveDevelopment": {
+        "title": "Responsive Development",
+        "description": "Using my front-end background, i develop websites that are responsive and work smoothly on all devices for better user experience."
+      },
+      "devopsAndVersionControl": {
+        "title": "DevOps and Version Control",
+        "description": "I use Git for version control and deploy websites using scripts in Maker Bundle and an Ubuntu server."
+      }
+    }
+  },
+  "contact": {
+    "title": "Let's work together!",
+    "description": "I'm always ready to start new projects and learn new technologies. You can contact me with this form, so that we can work together."
+  },
+  "footer": {
+    "copyright": "All rights reserved by"
+  },
+  "notFound": "Page not found"
+}

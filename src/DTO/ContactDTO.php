@@ -2,27 +2,23 @@
 
 namespace App\DTO;
 
-use Karser\Recaptcha3Bundle\Validator\Constraints\Recaptcha3;
 use Symfony\Component\Validator\Constraints as Assert;
 
 class ContactDTO
 {
     #[Assert\NotBlank]
-    #[Assert\Regex(pattern: '/[0-9a-zA-Z_]*/', message: 'The name must only contain letters, numbers, underscores and hyphens')]
-    #[Assert\Length(min: 5, minMessage: 'The name must be descriptive enough and must have at least 5 characters')]
     private string $name;
 
     #[Assert\NotBlank]
-    #[Assert\Email(message: 'The email "{{ value }}" is not a valid email.')]
     private string $email;
 
     #[Assert\NotBlank]
     private string $message;
 
+    private array $captcha;
+
     #[Assert\NotBlank]
     private string $details;
-
-    public array $captcha;
 
     public function getName(): ?string
     {
@@ -65,6 +61,17 @@ class ContactDTO
     public function setDetails(string $details): static
     {
         $this->details = $details;
+        return $this;
+    }
+
+    public function getCaptcha(): array
+    {
+        return $this->captcha;
+    }
+
+    public function setCaptcha(array $captcha): static
+    {
+        $this->captcha = $captcha;
         return $this;
     }
 }

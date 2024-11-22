@@ -11,6 +11,7 @@ import ReactImage from "../../images/icons/react-svgrepo-com.svg";
 import PHPImage from "../../images/icons/php-logo-svgrepo-com.svg";
 import SymfonyImage from "../../images/icons/light-symfony-svgrepo-com.svg";
 import {BsArrowUpRightCircle, BsArrowRightCircle} from "react-icons/bs";
+import {useTranslation} from "react-i18next";
 
 export default function () {
     return (
@@ -22,6 +23,7 @@ export default function () {
 }
 
 function Skills() {
+    const { t } = useTranslation();
     const [activeSkills, setActiveSkills] = useState(true);
     const setFrontEnd = () => {
         setActiveSkills(true);
@@ -35,11 +37,10 @@ function Skills() {
         <div className='skills-section w-full flex flex-col content-center justify-center flex-wrap mt-10 py-20 rounded-3xl about-skills mb-32'>
             <div className='skills-header w-full flex flex-col content-center flex-wrap mb-10'>
                 <h2 className='text-center text-4xl font-bold mb-6 md:text-6xl'>
-                    My Skills
+                    {t('skills.title')}
                 </h2>
                 <p className='text-lg px-2 text-center md:text-2xl lg:text-xl'>
-                    These are the different stacks i learned or began to learn during my journey as a web developer,
-                    these mainly through self-learning.
+                    {t('skills.description')}
                 </p>
             </div>
             <div className='skills-categories w-full flex justify-center gap-x-5 text-lg text-theme-primary md:text-xl lg:text-xl'>
@@ -114,6 +115,7 @@ function Skills() {
 }
 
 function Contact() {
+    const { t } = useTranslation();
     const [hovered, setHovered] = useState(false);
     const handleHover = () => {
         setHovered(true);
@@ -125,8 +127,8 @@ function Contact() {
 
     return (
         <div className='about-contact md:px-5 flex flex-col' data-aos='slide-up'>
-            <p className='text-lg'>Want to start a project?</p>
-            <h2 className='about-contact-header'>Let's have a chat</h2>
+            <p className='text-lg'>{t('about.contact.text')}</p>
+            <h2 className='about-contact-header'>{t('about.contact.title')}</h2>
             <a href='mailto:nkenengnunlafrancklevy@gmail.com'
                onMouseOver={handleHover}
                onMouseLeave={handleMouseLeave}

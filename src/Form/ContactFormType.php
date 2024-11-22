@@ -10,33 +10,53 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\Length;
+use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\Validator\Constraints\Regex;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 class ContactFormType extends AbstractType
 {
+
+    public function __construct(private readonly TranslatorInterface $translator)
+    {
+    }
+
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
             ->add('name', TextType::class, [
                 'attr' => [
-                    'placeholder' => 'Name',
+                    'placeholder' => $this->translator->trans('contact.name'),
                     'class' => 'form-control',
+                ],
+                'constraints' => [
+                    new NotBlank(),
+                    new Regex([
+                        'pattern' => '/[0-9a-zA-Z_]*/',
+                        'message' => $this->translator->trans('contact.errors.name.pattern'),
+                    ]),
+                    new Length([
+                        'min' => 5,
+                        'minMessage' => $this->translator->trans('contact.errors.name.min'),
+                    ])
                 ]
             ])
             ->add('email', EmailType::class, [
                 'attr' => [
-                    'placeholder' => 'Email Address',
+                    'placeholder' => $this->translator->trans('contact.email'),
                     'class' => 'form-control'
                 ]
             ])
             ->add('message', TextareaType::class, [
                 'attr' => [
-                    'placeholder' => 'Your detailed message',
+                    'placeholder' => $this->translator->trans('contact.message'),
                     'class' => 'form-control'
                 ]
             ])
             ->add('details', TextareaType::class, [
                 'attr' => [
-                    'placeholder' => 'Details about yourself',
+                    'placeholder' => $this->translator->trans('contact.details'),
                     'class' => 'form-control'
                 ]
             ])
@@ -44,7 +64,7 @@ class ContactFormType extends AbstractType
                 'type' => 'invisible' // (invisible, checkbox)
             ])
             ->add('submit', SubmitType::class, [
-                'label' => 'Send Message',
+                'label' => $this->translator->trans('contact.send'),
             ])
         ;
     }

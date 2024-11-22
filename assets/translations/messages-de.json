@@ -1,0 +1,89 @@
+{
+  "header": {
+    "links": {
+      "home": "Startseite",
+      "about": "Über Mich",
+      "services": "Dienstleistungen",
+      "projects": "Projekte",
+      "contact": "Kontakt"
+    },
+    "resume": "CV"
+  },
+  "mainContent": {
+    "hero": {
+      "title": "Hallo! Ich bin ein Student\n+ Webentwickler",
+      "description": "Ich bin ein Student an der Hochschule für Technik und Wirtschaft Berlin (HTW Berlin). Ich bin ein Fullstack Webentwickler mit einer sehr großen Leidenschaft für die Entwicklung und Herstellung von Webanwendungen durch die Nutzung moderner Technologien. Ich bin gerade auf der Suche nach Gelegenheiten, an neuen aufregenden Projekten zu arbeiten, in Zusammenarbeit mit anderen Entwicklern.",
+      "description2": "Ich bin ein Fullstack Webentwickler mit einer sehr großen Leidenschaft für die Entwicklung und Herstellung von Webanwendungen durch die Nutzung moderner Technologien.",
+      "hireMe": "Stellen Sie Mich an!"
+    },
+    "contact": {
+      "question": "Brauchen Sie meine Hilfe?",
+      "button": "Schreiben Sie!"
+    }
+  },
+  "about": {
+    "contact": {
+      "text": "Möchten Sie ein Projekt starten?",
+      "title": "Diskutieren Wir"
+    }
+  },
+  "skills": {
+    "title": "Meine Fähigkeiten",
+    "description": "Hier sind die verschiedenen 'Stacks' aufgelistet, die ich während meiner Zeit als Webentwickler gelernt oder damit begonnen habe, zu lernen, diese meistens durch Selbstlernen."
+  },
+  "projects": {
+    "title": "Aktuelle Projekte",
+    "project": {
+      "firstPortfolio": {
+        "name": "Erstes Portfolio",
+        "description": "Hier ist mein erstes Portfolio, entwickelt mit nur HTML und CSS"
+      },
+      "javascriptCalculator": {
+        "name": "JavaScript Rechner",
+        "description": "Ein in JavaScript entwickeltes, einfaches und funktionelles Rechner"
+      },
+      "simpleReactBlog": {
+        "name": "Einfaches React Blog",
+        "description": "Ein einfaches 'Single-Page' Blog, das ich mit ReactJs und Bootstrap entwickelt habe"
+      },
+      "symfonyBlog": {
+        "name": "Symfony Blog",
+        "description": "Eine Facebook-ähnliche Website in Symfony"
+      },
+      "socialNetworkPHP": {
+        "name": "Social Network PHP",
+        "description": "Ein Mitgliederverbindungssystem gekoppelt mit einem Blogsystem, das mit PHP entwickelt wurde."
+      }
+    }
+  },
+  "services": {
+    "title": "Dienstleistungen",
+    "description": "Angebotene Dienstleistungen",
+    "service": {
+      "frontEndDevelopment": {
+        "title": "Front-End Entwicklung",
+        "description": "Ich entwickle das Front-End von Websites mit den neuesten Technologien und Frameworks wie React, TailwindCSS und Sass."
+      },
+      "backEndDevelopment": {
+        "title": "Back-End Entwicklung",
+        "description": "Ich helfe dabei, dynamische Websites zu erstellen, indem ich den Server mit PHP und dem beliebten Framework Symfony manipuliere."
+      },
+      "responsiveDevelopment": {
+        "title": "Responsive Entwicklung",
+        "description": "Mit meinem Front-End-Hintergrund entwickle ich Websites, die reaktionsschnell sind und auf allen Geräten reibungslos funktionieren, um eine bessere Benutzererfahrung zu gewährleisten."
+      },
+      "devopsAndVersionControl": {
+        "title": "DevOps und Version Control",
+        "description": "Ich verwende Git zur Versionskontrolle und deploye Websites mit Skripten im Maker Bundle und einem Ubuntu-Server."
+      }
+    }
+  },
+  "contact": {
+    "title": "Lassen Sie uns zusammenarbeiten!",
+    "description": "Ich bin immer bereit, neue Projekte zu starten und neue Technologien zu lernen. Sie können mich über dieses Formular kontaktieren, damit wir zusammenarbeiten können."
+  },
+  "footer": {
+    "copyright": "Alle Rechte vorbehalten von"
+  },
+  "notFound": "Seite nicht gefunden"
+}

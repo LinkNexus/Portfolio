@@ -52,8 +52,16 @@
         {% set Form = null %}
     {% endif %}
 
+    {% if path is not defined %}
+        {% set path = null %}
+    {% endif %}
+
+    {% dump(app.session.get('lang')) %}
+
     <div {{ react_component('Layout', {
-        form: Form
+        form: Form,
+        path: path,
+        lang: app.request.session.get('lang')
     }) }} >
         <div class="flex max-w-screen flex-col flex-wrap content-center justify-center w-screen h-screen">
             <twig:Spinner />

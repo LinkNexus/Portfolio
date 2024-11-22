@@ -2,82 +2,89 @@
 
 namespace App\Controller;
 
-use App\DTO\ContactDTO;
-use App\Form\ContactFormType;
-use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
-use Symfony\Component\Mailer\MailerInterface;
-use Symfony\Component\Mime\Address;
-use Symfony\Component\Mime\Email;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Attribute\Route;
-use Symfony\Component\Security\Csrf\CsrfTokenManagerInterface;
+use Symfony\Component\Translation\LocaleSwitcher;
 
 final class AppController extends AbstractController
 {
-    #[Route('/', name: 'app_home')]
-    public function index(): Response
+    private readonly SessionInterface $session;
+
+    private readonly LocaleSwitcher $localeSwitcher;
+
+    private readonly Request $request;
+
+    public function __construct(RequestStack $requestStack, LocaleSwitcher $localeSwitcher)
     {
-        return $this->render('app/index.html.twig', [
-            'form' => null
-        ]);
+        $this->session = $requestStack->getSession();
+        $this->localeSwitcher = $localeSwitcher;
+        $this->request = $requestStack->getCurrentRequest();
     }
 
-    #[Route('/about', name: 'app_about')]
-    public function about(): Response
+    private function localeSwitch(string $routeName): RedirectResponse
     {
-        return $this->render('app/index.html.twig', [
-            'form' => null
-        ]);
-    }
-
-    #[Route('/services', name: 'app_services')]
-    public function services(): Response
-    {
-        return $this->render('app/index.html.twig', [
-            'form' => null
-        ]);
-    }
-
-    #[Route('/projects', name: 'app_projects')]
-    public function projects(): Response
-    {
-        return $this->render('app/index.html.twig', [
-            'form' => null
-        ]);
-    }
-
-    #[Route('/contact', name: 'app_contact')]
-    public function contact(Request $request, MailerInterface $mailer): Response
-    {
-        $data = new ContactDTO();
-        $form = $this->createForm(ContactFormType::class, $data);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $email = (new TemplatedEmail())
-                ->from($this->getParameter('sender_email'))
-                ->to($this->getParameter('user_email'))
-                ->subject('Mail from my Portfolio')
-                ->htmlTemplate('emails/contact.html.twig')
-                ->context([
-                    'data' => $data
-                ]);
-
-            try {
-                $mailer->send($email);
-                $this->addFlash('notice', 'Your message has been sent.');
-            } catch (TransportExceptionInterface $e) {
-                $this->addFlash('error', $e->getMessage());
-            } finally {
-                return $this->redirectToRoute('app_contact');
-            }
+        if ($this->session->get('lang')) {
+            $this->request->headers->set('Accept-Language', $this->session->get('lang'));
         }
 
-        return $this->render('app/index.html.twig', [
-            'form' => $form
-        ]);
+        $this->localeSwitcher->setLocale($this->request->getPreferredLanguage(['en', 'de', 'fr']));
+        return $this->redirectToRoute($routeName);
+    }
+
+    #[Route('/', name: 'home')]
+    public function index(): Response
+    {
+        return $this->localeSwitch('locale_home');
+    }
+
+    #[Route('/about', name: 'about')]
+    public function about(): Response
+    {
+        return $this->localeSwitch('locale_about');
+    }
+
+    #[Route('/services', name: 'services')]
+    public function services(): Response
+    {
+        return $this->localeSwitch('locale_services');
+    }
+
+    #[Route('/projects', name: 'projects')]
+    public function projects(Request $request): Response
+    {
+        return $this->localeSwitch('locale_projects');
+    }
+
+    #[Route('/contact', name: 'contact')]
+    public function contact(): Response
+    {
+        return $this->localeSwitch('locale_contact');
+    }
+
+    #[Route('/resume', name: 'resume')]
+    public function resume() : Response
+    {
+        return $this->localeSwitch('locale_resume');
+    }
+
+    #[Route('/lang/{locale}/{previousRoute}', name: 'lang')]
+    public function setLocale(string $locale, ?string $previousRoute = ''): Response
+    {
+        $this->session->set('lang', $locale);
+        return $previousRoute && $previousRoute !== '' ?
+            $this->redirectToRoute($previousRoute) :
+            $this->redirectToRoute('home');
+    }
+
+    #[Route('/lang/get', name: 'getLocale', methods: ['POST'])]
+    public function getAcceptedLanguage(): JsonResponse
+    {
+        return $this->json(['locale' => $this->localeSwitcher->getLocale()]);
     }
 }

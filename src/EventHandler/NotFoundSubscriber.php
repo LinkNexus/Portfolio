@@ -24,7 +24,8 @@ readonly class NotFoundSubscriber implements EventSubscriberInterface
     public function onKernelException(ExceptionEvent $exceptionEvent): void
     {
         $content = $this->twig->render('app/index.html.twig', [
-            'form' => null
+            'form' => null,
+            "path" => null,
         ]);
 
         $exception = $exceptionEvent->getThrowable();
