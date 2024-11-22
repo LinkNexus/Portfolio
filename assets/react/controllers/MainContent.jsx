@@ -261,7 +261,7 @@ export function Project({ project, index }) {
                     {t(`projects.project.${convertCamelCase(project.name)}.description`)}
                 </p>
                 {project.link &&
-                    <a className='mx-auto project-live-preview md:w-2/5 md:min-w-fit flex content-center justify-center text-white font-bold py-2 rounded-full my-2 text-center w-fit px-6 py-3'
+                    <a target='_blank' className='mx-auto project-live-preview md:w-2/5 md:min-w-fit flex content-center justify-center text-white font-bold py-2 rounded-full my-2 text-center w-fit px-6 py-3'
                        href={project.link}>
                         <span>Live Demo</span>
                         <div>
