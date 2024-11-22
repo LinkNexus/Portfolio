@@ -87,4 +87,30 @@ final class AppController extends AbstractController
     {
         return $this->json(['locale' => $this->localeSwitcher->getLocale()]);
     }
+
+    #[Route('/sitemap.{_format}', name: 'sitemap', requirements: [
+        '_format' => 'xml',
+    ], format: 'xml')]
+    public function sitemap(): Response
+    {
+        $routeNames = [
+            'home',
+            'about',
+            'services',
+            'projects',
+            'contact',
+        ];
+
+        $urls = [];
+        array_walk($routeNames, function (&$route) use (&$urls) {
+           $urls[] = $this->generateUrl($route);
+        });
+
+        $response = $this->render('seo/sitemap.xml.twig', [
+            'urls' => $urls,
+        ]);
+        $response->headers->set('Content-Type', 'text/xml');
+
+        return $response;
+    }
 }
