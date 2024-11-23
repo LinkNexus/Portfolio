@@ -1,6 +1,7 @@
 import {useTranslation} from "react-i18next";
+import React from "react";
 
-export default function ({ lang }) {
+export default function ({ lang }): React.JSX.Element {
     const { t, i18n } = useTranslation();
 
     if (localStorage.getItem("lang") !== lang) {

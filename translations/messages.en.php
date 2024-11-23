@@ -12,6 +12,9 @@ return [
                 'pattern' => 'The name must only contain letters, numbers, underscores and hyphens',
                 'min' => 'The name must be descriptive enough and must have at least 5 characters'
             ]
-        ]
+        ],
+    ],
+    'email' => [
+        'sent' => 'Your message has been sent',
     ]
 ];

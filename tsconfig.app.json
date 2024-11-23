@@ -5,6 +5,8 @@
       "@/*": [
         "./assets/*"
       ]
-    }
+    },
+    "jsx": "react",
+    "allowSyntheticDefaultImports": true
   }
 }

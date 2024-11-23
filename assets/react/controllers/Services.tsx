@@ -4,14 +4,15 @@ import {IoIosGitBranch} from "react-icons/io";
 import {RiCodeSSlashFill} from "react-icons/ri";
 import {SlSettings} from "react-icons/sl";
 import {useTranslation} from "react-i18next";
+import React, {ReactElement} from "react";
 
-const convertCamelCase = (string) => {
+const convertCamelCase = (string: string): string => {
     const parts = string.replace('-', " ").split(' ');
     return parts[0].toLowerCase() + parts.filter((part, index) => index !== 0).map((part) => part[0].toUpperCase() + part.substring(1)).join('');
 }
 
-export default function () {
-    const services = [
+export default function (): React.JSX.Element {
+    const services: Services[] = [
         {
             icon: <RiCodeSSlashFill />,
             title: 'Front-End Development',
@@ -53,4 +54,10 @@ export default function () {
             </div>
         </div>
     );
+}
+
+interface Services {
+    icon: ReactElement;
+    title: string;
+    description: string;
 }

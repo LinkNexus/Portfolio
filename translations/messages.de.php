@@ -13,5 +13,8 @@ return [
                 'min' => "Der Name muss beschreibend genug sein und mindestens 5 Zeichen lang sein."
             ]
         ]
+    ],
+    'email' => [
+        'sent' => 'Ihre Nachricht wurde gesendet',
     ]
 ];

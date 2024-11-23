@@ -13,5 +13,8 @@ return [
                 'min' => "Le nom doit être suffisamment descriptif et comporter au moins 5 caractères."
             ]
         ]
+    ],
+    'email' => [
+        'sent' => 'Vôtre Message a bien été envoyé',
     ]
 ];

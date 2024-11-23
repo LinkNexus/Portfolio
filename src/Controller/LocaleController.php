@@ -13,6 +13,7 @@ use Symfony\Component\HttpFoundation\ResponseHeaderBag;
 use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 #[Route(
     path: '/{_locale}',
@@ -24,7 +25,7 @@ use Symfony\Component\Routing\Attribute\Route;
 final class LocaleController extends AbstractController
 {
 
-    public function __construct()
+    public function __construct(private readonly TranslatorInterface $translator)
     {}
 
     #[Route('/', name: 'home')]
@@ -82,7 +83,7 @@ final class LocaleController extends AbstractController
 
             try {
                 $mailer->send($email);
-                $this->addFlash('notice', 'Your message has been sent.');
+                $this->addFlash('notice', $this->translator->trans('email.sent'));
             } catch (TransportExceptionInterface $e) {
                 $this->addFlash('error', $e->getMessage());
             } finally {

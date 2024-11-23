@@ -1,5 +1,6 @@
 import { registerReactControllerComponents } from '@symfony/ux-react';
 import './bootstrap.js';
+import './bootstrap.ts';
 import "./app.sass";
 import "./images/favicon/favicon-96x96.png";
 import "./images/favicon/favicon.svg";
