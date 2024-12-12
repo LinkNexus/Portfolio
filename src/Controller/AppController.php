@@ -8,6 +8,7 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\ResponseHeaderBag;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Component\Translation\LocaleSwitcher;
@@ -29,8 +30,8 @@ final class AppController extends AbstractController
 
     private function localeSwitch(string $routeName): RedirectResponse
     {
-        if ($this->session->get('lang')) {
-            $this->request->headers->set('Accept-Language', $this->session->get('lang'));
+        if ($lang = $this->session->get('lang')) {
+            $this->request->headers->set('Accept-Language', $lang);
         }
 
         $this->localeSwitcher->setLocale($this->request->getPreferredLanguage(['en', 'de', 'fr']));
@@ -112,5 +113,18 @@ final class AppController extends AbstractController
         $response->headers->set('Content-Type', 'text/xml');
 
         return $response;
+    }
+
+    #[Route(path: '/uni-results', name: 'uni_results')]
+    public function uniResults(): RedirectResponse
+    {
+        return $this->localeSwitch('locale_uni_results');
+    }
+
+    #[Route(path: '/recommendation', name: 'recommendation')]
+    public function recommendation(): Response
+    {
+        $file = __DIR__ . '/../../assets/images/recommendation.pdf';
+        return $this->file($file, 'Levy Nkeneng Recommendation.pdf', ResponseHeaderBag::DISPOSITION_INLINE);
     }
 }

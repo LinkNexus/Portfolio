@@ -24,9 +24,6 @@ use Symfony\Component\Routing\Attribute\Route;
 final class LocaleController extends AbstractController
 {
 
-    public function __construct()
-    {}
-
     #[Route('/', name: 'home')]
     public function index(): Response
     {
@@ -99,8 +96,16 @@ final class LocaleController extends AbstractController
     #[Route('/resume', name: 'resume')]
     public function resume(Request $request) : BinaryFileResponse
     {
-        $locale = $request->getPreferredLanguage(['en', 'fr', 'de']);
+        $locale = $request->getLocale();
         $file = __DIR__ . '/../../assets/images/resumes/resume-'. ($locale ?: 'en') .'.pdf';
-        return $this->file($file, 'resume-en.pdf', ResponseHeaderBag::DISPOSITION_INLINE);
+        return $this->file($file, 'Levy Nkeneng resume.pdf', ResponseHeaderBag::DISPOSITION_INLINE);
+    }
+
+    #[Route(path: '/uni-results', name: 'uni_results')]
+    public function uniResults(Request $request): Response
+    {
+        $locale = $request->getLocale();
+        $file = __DIR__ . '/../../assets/images/grades-transcripts/'. ($locale === 'fr' ? 'en' : $locale) . '.pdf';
+        return $this->file($file, 'Levy Nkeneng grades.pdf', ResponseHeaderBag::DISPOSITION_INLINE);
     }
 }
