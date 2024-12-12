@@ -43,7 +43,7 @@ export default function () {
             <Hero />
             <Skills />
             <RecentProjects />
-            <ContactZone />
+            <RecommendationZone />
         </>
     );
 }
@@ -280,12 +280,12 @@ export function Project({ project, index }) {
     );
 }
 
-function ContactZone() {
+function RecommendationZone() {
     const { t } = useTranslation();
     return (
         <div className='w-full contact-zone mt-32 p-10 rounded-3xl' data-aos='fade-up'>
-            <h2 className='contact-zone-header md:text-6xl'>{t('mainContent.contact.question')}</h2>
-            <a className='contact-button' href='mailto:nkenengnunlafrancklevy@gmail.com'>
+            <h2 className='contact-zone-header md:text-6xl'>{t('mainContent.contact.label')}</h2>
+            <a className='contact-button' href='/recommendation'>
                 <div className='flex justify-center content-center'>
                     <span className='mr-3'>{t('mainContent.contact.button')}</span>
                     <div>

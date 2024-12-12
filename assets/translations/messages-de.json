@@ -17,8 +17,8 @@
       "hireMe": "Stellen Sie Mich an!"
     },
     "contact": {
-      "question": "Brauchen Sie meine Hilfe?",
-      "button": "Schreiben Sie!"
+      "label": "Die Empfehlung meines Lehrers",
+      "button": "Empfehlung"
     }
   },
   "about": {
@@ -85,5 +85,6 @@
   "footer": {
     "copyright": "Alle Rechte vorbehalten von"
   },
-  "notFound": "Seite nicht gefunden"
+  "notFound": "Seite nicht gefunden",
+  "language": "Sprache"
 }

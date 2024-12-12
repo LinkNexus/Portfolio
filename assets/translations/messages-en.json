@@ -17,8 +17,8 @@
       "hireMe": "Hire Me!"
     },
     "contact": {
-      "question": "Need my Help?",
-      "button": "Contact Me!"
+      "label": "My Professor's Recommendation",
+      "button": "Recommendation"
     }
   },
   "about": {
@@ -85,5 +85,6 @@
   "footer": {
     "copyright": "All rights reserved by"
   },
-  "notFound": "Page not found"
+  "notFound": "Page not found",
+  "language": "Language"
 }

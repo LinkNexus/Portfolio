@@ -17,8 +17,8 @@
       "hireMe": "Engagez-Moi!"
     },
     "contact": {
-      "question": "Besoin de mon aide?",
-      "button": "Contactez-Moi!"
+      "label": "Recomandation de mon Professeur",
+      "button": "Recommandation"
     }
   },
   "about": {
@@ -85,5 +85,6 @@
   "footer": {
     "copyright": "Tout droits réservés par"
   },
-  "notFound": "Page introuvable"
+  "notFound": "Page introuvable",
+  "language": "Langue"
 }

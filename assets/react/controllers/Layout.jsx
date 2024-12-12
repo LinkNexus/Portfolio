@@ -69,7 +69,7 @@ export default function ({ form, path, lang }) {
 
             <div className='fixed flex flex-wrap flex-col bottom-[75px] right-[20px] text-lg z-[10]'>
                 <div ref={languageMenuRef} className='bg-theme-primary self-start hidden text-white p-3 mb-5'>
-                    <h4 className='text-center text-2xl font-semibold mb-3'>Language</h4>
+                    <h4 className='text-center text-2xl font-semibold mb-3'>{t('language')}</h4>
                     <div className='flex flex-col'>
                         {Object.keys(lngs).map((lng) => (
                             <a
