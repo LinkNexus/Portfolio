@@ -10,9 +10,79 @@ import JSImage from "../../images/icons/javascript-svgrepo-com.svg";
 import ReactImage from "../../images/icons/react-svgrepo-com.svg";
 import PHPImage from "../../images/icons/php-logo-svgrepo-com.svg";
 import SymfonyImage from "../../images/icons/light-symfony-svgrepo-com.svg";
+import TypeScriptImage from "../../images/icons/typescript-official-svgrepo-com.svg";
+import GitImage from "../../images/icons/git-svgrepo-com.svg";
+import DockerImage from "../../images/icons/docker-svgrepo-com.svg";
+import LinuxImage from "../../images/icons/linux-svgrepo-com.svg";
+import PhpStormImage from "../../images/icons/phpstorm-svgrepo-com.svg";
+import UbuntuImage from "../../images/icons/ubuntu-svgrepo-com.svg";
 import {BsArrowUpRightCircle, BsArrowRightCircle} from "react-icons/bs";
 import {useTranslation} from "react-i18next";
 
+const skills = {
+    "front-end": [
+        {
+            label: "HTML",
+            icon: HTMLImage,
+        },
+        {
+            label: "CSS",
+            icon: CSSImage,
+        },
+        {
+            label: "Tailwind",
+            icon: TailwindImage,
+        },
+        {
+            label: "Sass",
+            icon: SassImage,
+        },
+        {
+            label: "JavaScript",
+            icon: JSImage,
+        },
+        {
+            label: "TypeScript",
+            icon: TypeScriptImage
+        },
+        {
+            label: "React",
+            icon: ReactImage
+        }
+    ],
+    "back-end": [
+        {
+            label: "PHP",
+            icon: PHPImage,
+        },
+        {
+            label: "Symfony",
+            icon: SymfonyImage,
+        }
+    ],
+    tools: [
+        {
+            label: "Git",
+            icon: GitImage
+        },
+        {
+            label: "Docker",
+            icon: DockerImage
+        },
+        {
+            label: "Linux",
+            icon: LinuxImage
+        },
+        {
+            label: "PhpStorm",
+            icon: PhpStormImage
+        },
+        {
+            label: "Ubuntu",
+            icon: UbuntuImage
+        }
+    ]
+}
 export default function () {
     return (
       <>
@@ -24,13 +94,18 @@ export default function () {
 
 function Skills() {
     const { t } = useTranslation();
-    const [activeSkills, setActiveSkills] = useState(true);
+    const [activeSkills, setActiveSkills] = useState('front-end');
+
     const setFrontEnd = () => {
-        setActiveSkills(true);
+        setActiveSkills('front-end');
     }
 
     const setBackEnd = () => {
-        setActiveSkills(false);
+        setActiveSkills('back-end');
+    }
+
+    const setTools = () => {
+        setActiveSkills('tools');
     }
 
     return (
@@ -43,73 +118,36 @@ function Skills() {
                     {t('skills.description')}
                 </p>
             </div>
-            <div className='skills-categories w-full flex justify-center gap-x-5 text-lg text-theme-primary md:text-xl lg:text-xl'>
+            <div
+                className='skills-categories w-full flex justify-center gap-x-5 text-lg text-theme-primary md:text-xl lg:text-xl'>
                 <button
                     onClick={setFrontEnd}
-                    className={activeClassIf(activeSkills)}>
+                    className={activeClassIf(activeSkills === 'front-end')}>
                     <span>Front-End</span>
                 </button>
                 <button
                     onClick={setBackEnd}
-                    className={activeClassIf(!activeSkills)}>
+                    className={activeClassIf(activeSkills === 'back-end')}>
                     <span>Backend</span>
                 </button>
+                <button
+                    onClick={setTools}
+                    className={activeClassIf(activeSkills === 'tools')}>
+                    <span>Tools</span>
+                </button>
             </div>
-            <div
-                className={(!activeSkills ? 'hidden' : '') + ' skills-list flex gap-4 w-full flex-wrap justify-center mt-10 px-5 py-3'}>
-                <div className='skill' data-aos='fade-up'>
-                    <div>
-                        <img src={HTMLImage} alt='html'/>
-                    </div>
-                    <span>HTML</span>
+            {Object.keys(skills).map(category => (
+                <div
+                    key={category}
+                    className={(activeSkills !== category ? 'hidden' : '') + ' skills-list flex gap-4 w-full flex-wrap justify-center mt-10 px-5 py-3'}>
+                    {skills[category].map(skill => (
+                        <div key={skill['label']} className='skill' data-aos='fade-up'>
+                            <div><img src={skill['icon']} alt={skill['label']}/></div>
+                            <span>{skill['label']}</span>
+                        </div>
+                    ))}
                 </div>
-                <div className='skill' data-aos='fade-up'>
-                    <div>
-                        <img src={CSSImage} alt='css'/>
-                    </div>
-                    <span>CSS</span>
-                </div>
-                <div className='skill' data-aos='fade-up'>
-                    <div>
-                        <img src={TailwindImage} alt='tailwind'/>
-                    </div>
-                    <span>Tailwind</span>
-                </div>
-                <div className='skill' data-aos='fade-up'>
-                    <div>
-                        <img src={SassImage} alt='sass'/>
-                    </div>
-                    <span>Saas</span>
-                </div>
-                <div className='skill' data-aos='fade-up'>
-                    <div>
-                        <img src={JSImage} alt='javascript'/>
-                    </div>
-                    <span>JavaScript</span>
-                </div>
-                <div className='skill' data-aos='fade-up'>
-                    <div>
-                        <img src={ReactImage} alt='react'/>
-                    </div>
-                    <span>React</span>
-                </div>
-            </div>
-
-            <div
-                className={(activeSkills ? 'hidden' : '') + ' skills-list flex gap-4 w-full flex-wrap justify-center mt-10 px-5 py-3'}>
-                <div className='skill' data-aos='fade-up'>
-                    <div>
-                        <img src={PHPImage} alt='php'/>
-                    </div>
-                    <span>PHP</span>
-                </div>
-                <div className='skill' data-aos='fade-up'>
-                    <div>
-                        <img src={SymfonyImage} alt='symfony'/>
-                    </div>
-                    <span>Symfony</span>
-                </div>
-            </div>
+            ))}
         </div>
     );
 }
