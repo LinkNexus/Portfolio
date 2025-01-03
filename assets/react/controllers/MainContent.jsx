@@ -20,6 +20,7 @@ import SymfonyBlogImage from '../../images/projects/symfony-blog.png';
 import SocialNetworkPHPImage from '../../images/projects/social-network-php.png';
 import {useTranslation} from "react-i18next";
 import projects from "../../utils/projects.js";
+import Skills from "./Skills.jsx";
 
 
 
@@ -134,98 +135,6 @@ function Hero() {
                             </a>
                         </li>
                     </ul>
-                </div>
-            </div>
-        </div>
-    );
-}
-
-function Skills() {
-    const { t } = useTranslation();
-    const [activeSkills, setActiveSkills] = useState(true);
-    const setFrontEnd = () => {
-        setActiveSkills(true);
-    }
-
-    const setBackEnd = () => {
-        setActiveSkills(false);
-    }
-
-    return (
-        <div className='skills-section w-full flex flex-col content-center justify-center flex-wrap mt-32 mb-32'>
-            <div className='skills-header w-full flex flex-col content-center flex-wrap mb-10'>
-                <h2 className='text-center text-4xl font-bold mb-6 md:text-6xl'>
-                    {t('skills.title')}
-                </h2>
-                <p className='text-lg text-center md:text-2xl lg:text-xl'>
-                    {t('skills.description')}
-                </p>
-            </div>
-            <div className='skills-categories w-full flex justify-center gap-x-5 text-lg text-theme-primary md:text-xl lg:text-xl'>
-                <button
-                    onClick={setFrontEnd}
-                    className={activeClassIf(activeSkills)}>
-                    <span>Front-End</span>
-                </button>
-                <button
-                    onClick={setBackEnd}
-                    className={activeClassIf(!activeSkills)}>
-                    <span>Backend</span>
-                </button>
-            </div>
-            <div
-                className={(!activeSkills ? 'hidden' : '') + ' skills-list flex gap-4 w-full flex-wrap justify-center mt-10 px-5 py-3'}>
-                <div className='skill' data-aos='fade-down'>
-                    <div>
-                        <img src={HTMLImage} alt='html'/>
-                    </div>
-                    <span>HTML</span>
-                </div>
-                <div className='skill' data-aos='fade-down'>
-                    <div>
-                        <img src={CSSImage} alt='css'/>
-                    </div>
-                    <span>CSS</span>
-                </div>
-                <div className='skill' data-aos='fade-down'>
-                    <div>
-                        <img src={TailwindImage} alt='tailwind'/>
-                    </div>
-                    <span>Tailwind</span>
-                </div>
-                <div className='skill' data-aos='fade-down'>
-                    <div>
-                        <img src={SassImage} alt='sass'/>
-                    </div>
-                    <span>Saas</span>
-                </div>
-                <div className='skill' data-aos='fade-down'>
-                    <div>
-                        <img src={JSImage} alt='javascript'/>
-                    </div>
-                    <span>JavaScript</span>
-                </div>
-                <div className='skill' data-aos='fade-down'>
-                    <div>
-                        <img src={ReactImage} alt='react'/>
-                    </div>
-                    <span>React</span>
-                </div>
-            </div>
-
-            <div
-                className={(activeSkills ? 'hidden' : '') + ' skills-list flex gap-4 w-full flex-wrap justify-center mt-10 px-5 py-3'}>
-                <div className='skill' data-aos='fade-down'>
-                    <div>
-                        <img src={PHPImage} alt='php'/>
-                    </div>
-                    <span>PHP</span>
-                </div>
-                <div className='skill' data-aos='fade-down'>
-                    <div>
-                        <img src={SymfonyImage} alt='symfony'/>
-                    </div>
-                    <span>Symfony</span>
                 </div>
             </div>
         </div>
